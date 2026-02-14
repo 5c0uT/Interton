@@ -1,7 +1,7 @@
 # Interton User Documentation / Пользовательская документация Interton
 
 <p align="center">
-  <img src="../../Interton.svg" alt="Interton logo" width="560">
+  <img src=".github/assets/Interton.svg" alt="Interton logo" width="560">
 </p>
 
 [![Repository](https://img.shields.io/badge/GitHub-5c0uT%2FInterton-black?logo=github)](https://github.com/5c0uT/Interton)
@@ -21,7 +21,6 @@ Official links:
 
 - Repository: `https://github.com/5c0uT/Interton`
 - Releases: `https://github.com/5c0uT/Interton/releases`
-- CI: `https://github.com/5c0uT/Interton/actions`
 
 ### Release-first installation policy
 
@@ -272,3 +271,4 @@ This user documentation focuses on writing and running Interton programs.
 Эта документация ориентирована на пользователя языка: как писать и запускать программы на Interton.
 
 Compiler internals are documented in developer docs under `docs/developers`.
+
