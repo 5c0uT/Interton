@@ -112,12 +112,6 @@ Automated path (recommended):
 bash scripts/install_interton.sh --yes
 ```
 
-One-line loader without cloning:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
-```
-
 The loader automatically:
 
 1. resolves a matching release asset for your OS/arch,
