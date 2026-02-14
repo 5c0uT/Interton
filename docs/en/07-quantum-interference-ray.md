@@ -15,10 +15,10 @@ Target version: `Interton beta-v_.6.1`
 
 | Type | What it stores | Example value | Typical usage | beta-v_.6.1 status |
 |---|---|---|---|---|
-| `quant_i` | quantum state with integer-oriented measurement path | `H(|0>)`, then `measure(...) -> int` | discrete quantum workflows | public |
-| `quant_f` | quantum state with float-oriented representation | `|0>`, `|1>` | mixed numeric/quantum pipelines | public |
-| `qubit` | single-qubit state container | `qubit q = |0>` | explicit single-qubit modeling | public |
-| `gate` | quantum operation descriptor/label | `gate g = H` | operation description pipelines | public (limited runtime semantics) |
+| `quant_i` | quantum state with integer-oriented measurement path | H(|0>), then `measure(...) -> int` | discrete quantum workflows | public |
+| `quant_f` | quantum state with float-oriented representation | |0>, |1> | mixed numeric/quantum pipelines | public |
+| `qubit` | single-qubit state container | qubit q = |0> | explicit single-qubit modeling | public |
+| `gate` | quantum operation descriptor/label | gate g = H | operation description pipelines | public (limited runtime semantics) |
 | `quant_b` | boolean quantum container | - | not for direct user syntax | internal/reserved |
 
 Practical rule:
