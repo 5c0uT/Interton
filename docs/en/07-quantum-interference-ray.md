@@ -13,11 +13,11 @@ Target version: `Interton beta-v_.6.1`
 
 ## 2. Quantum types: storage and differences
 
-Type -> `quant_i`, What it stores -> quantum state with integer-oriented measurement path, Example value ->  `H(|0>)`, then `measure(...) -> int`, Typical usage -> discrete quantum workflows, status -> public
-Type -> `quant_f`, What it stores -> quantum state with float-oriented representation, Example value ->  `|0>, |1>`, Typical usage -> mixed numeric/quantum pipelines, status -> public
-Type -> `qubit`, What it stores -> single-qubit state container, Example value ->  `qubit q = |0>`, Typical usage -> explicit single-qubit modeling, status -> public
-Type -> `gate`, What it stores -> quantum operation descriptor/label, Example value -> `gate g = H`, Typical usage -> operation description pipelines, status -> public (limited runtime semantics)
-Type -> `quant_b`, What it stores -> boolean quantum container, Example value ->  `-`, Typical usage -> discrete quantum workflows, status -> internal/reserved
+- Type -> `quant_i`, What it stores -> quantum state with integer-oriented measurement path, Example value ->  `H(|0>)`, then `measure(...) -> int`, Typical usage -> discrete quantum workflows, status -> public
+- Type -> `quant_f`, What it stores -> quantum state with float-oriented representation, Example value ->  `|0>, |1>`, Typical usage -> mixed numeric/quantum pipelines, status -> public
+- Type -> `qubit`, What it stores -> single-qubit state container, Example value ->  `qubit q = |0>`, Typical usage -> explicit single-qubit modeling, status -> public
+- Type -> `gate`, What it stores -> quantum operation descriptor/label, Example value -> `gate g = H`, Typical usage -> operation description pipelines, status -> public (limited runtime semantics)
+- Type -> `quant_b`, What it stores -> boolean quantum container, Example value ->  `-`, Typical usage -> discrete quantum workflows, status -> internal/reserved
 
 Practical rule:
 
