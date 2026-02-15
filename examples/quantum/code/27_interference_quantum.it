@@ -1,0 +1,11 @@
+adding std.io
+adding interference.quantum
+
+call main() -> int {
+    float[] amps = [0.7, 0.3]
+    string result = interference.quantum.apply_quantum_interference(amps, 0.4)
+    string key = interference.quantum.create_stenographic_key(5)
+    inscribe("interference:", result.interference_value)
+    inscribe("key:", key.key)
+    return 0
+}

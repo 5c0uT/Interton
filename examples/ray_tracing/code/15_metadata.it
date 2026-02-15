@@ -1,0 +1,28 @@
+adding std.io
+adding metadata.structural
+adding metadata.descriptive
+adding metadata.technical
+
+structural_metadata DataShape {
+    schema: { fields: ["id", "value"], types: ["int", "float"] };
+    version: "v1";
+}
+
+descriptive_metadata DatasetInfo {
+    title: "Sensor readings";
+    tags: ["telemetry", "beta"];
+    summary: "Sample dataset for metadata testing";
+}
+
+technical_metadata BuildInfo {
+    compiler: "intertonc";
+    target: "run-mode";
+    flags: ["--run"];
+}
+
+call main() -> int {
+    inscribe("DataShape:", DataShape.schema)
+    inscribe("Dataset:", DatasetInfo.title)
+    inscribe("Build target:", BuildInfo.target)
+    return 0
+}

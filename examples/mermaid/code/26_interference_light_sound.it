@@ -1,0 +1,26 @@
+adding std.io
+adding interference.light
+adding interference.sound
+adding interference.advanced
+
+call main() -> int {
+    float wavelength = 0.0000005
+    float slit = 0.0003
+    float screen = 1.2
+    float[] setup = [screen, wavelength, slit]
+
+    string stationary = interference.light.stationary_interference(1.0, 0.8, setup)
+    string young = interference.light.young_experiment(wavelength, slit, screen)
+    string film = interference.light.thin_film_interference(0.000001, 1.33, wavelength, 0.0)
+
+    string beats = interference.sound.sound_beats(440.0, 444.0, 1.0, 1.0)
+
+    string adv = interference.advanced.young_experiment(wavelength, slit, screen)
+
+    inscribe("stationary spacing:", stationary.fringe_spacing)
+    inscribe("young spacing:", young.fringe_spacing)
+    inscribe("film color:", film.film_color)
+    inscribe("beats freq:", beats.beat_frequency)
+    inscribe("advanced spacing:", adv.fringe_spacing)
+    return 0
+}

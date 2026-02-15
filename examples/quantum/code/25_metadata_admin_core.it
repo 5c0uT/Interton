@@ -1,0 +1,38 @@
+adding std.io
+adding metadata.core
+adding metadata.administrative
+
+domain_entity Document {
+    metadata {
+        category: "docs"
+        description: "Interton metadata demo"
+        version: "beta-v_.6.1"
+    }
+    attribute version: string {
+        metadata {
+            unit: "tag"
+            validation: "len(version) > 0"
+        }
+    }
+}
+
+administrative_metadata AccessPolicy {
+    resource: "example_docs",
+    access_control: [
+        { role: "reader", permissions: ["read"] },
+        { role: "editor", permissions: ["read", "write"] }
+    ],
+    lifecycle: {
+        creation_date: "2026-02-05",
+        retention_period: "2 years"
+    }
+}
+
+call main() -> int {
+    Document doc = Document(version="v2")
+    inscribe("doc category:", doc.metadata.category)
+    inscribe("doc version:", doc.version)
+    inscribe("policy resource:", AccessPolicy.resource)
+    return 0
+}
+

@@ -1,0 +1,16 @@
+adding std.io
+
+pure call add(x: int, y: int) -> int {
+    return x + y
+}
+
+procedure log_line(msg: string) -> void {
+    inscribe(msg)
+}
+
+call main() -> int {
+    log_line("start")
+    int out = add(5, 7)
+    inscribe("add:", out)
+    return 0
+}

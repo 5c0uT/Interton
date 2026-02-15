@@ -1,0 +1,13 @@
+adding std.io
+adding quantum { core, gates }
+
+using quantum.core;
+
+call main() -> int {
+    quant_i q = |0>
+    q = H(q)
+    q = X(q)
+    int bit = measure(q)
+    inscribe("bit:", bit)
+    return 0
+}

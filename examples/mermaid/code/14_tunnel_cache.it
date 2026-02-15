@@ -1,0 +1,21 @@
+%%tunnel config%%{
+similarity_threshold: 0.9
+max_cache_size: 64
+delta: 0.02
+enabled: true
+}
+
+adding std.io
+
+%%tunnel config%%
+call compute_mix(a: float, b: float) -> float {
+    return (a * 2.0 + b * 3.0) / (a + b + 1.0)
+}
+
+call main() -> int {
+    float v1 = compute_mix(2.0, 4.0)
+    float v2 = compute_mix(2.0, 4.0)
+    inscribe("mix:", v1, v2)
+    inscribe("tunnel stats:", get_tunnel_stats("compute_mix").hits)
+    return 0
+}

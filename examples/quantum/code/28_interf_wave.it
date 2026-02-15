@@ -1,0 +1,22 @@
+adding std.io
+adding interf.math
+adding interf.wave
+
+call main() -> int {
+    interf_f wave1 = 0.0
+    interf_f wave2 = 0.0
+
+    for int i = 0; i < 5; i = i + 1 {
+        wave1 = float(i)
+        wave2 = float(i) * 0.5
+    }
+
+    interf_f combined = interf.wave.interfere(wave1, wave2)
+    float coherence = interf.wave.coherence(wave1, wave2)
+    float power = interf.wave.interference_power(combined)
+
+    inscribe("coherence:", coherence)
+    inscribe("power:", power)
+    inscribe("mean:", interf.math.mean(combined))
+    return 0
+}

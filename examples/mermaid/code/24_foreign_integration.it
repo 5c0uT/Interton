@@ -1,0 +1,21 @@
+adding std.io
+
+adding <py> py_tokens(text: string) -> int[] {
+    return [len(t) for t in text.split()]
+}
+
+adding <js> js_sum(values: int[]) -> int {
+    return values.reduce((a, b) => a + b, 0);
+}
+
+adding <cpp> cpp_scale(value: int) -> int {
+    return value * 2;
+}
+
+call main() -> int {
+    int[] tokens = py_tokens("foreign bridge")
+    int total = js_sum(tokens)
+    int out = cpp_scale(total)
+    inscribe("foreign:", out)
+    return 0
+}

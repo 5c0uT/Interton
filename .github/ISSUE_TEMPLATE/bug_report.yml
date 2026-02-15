@@ -1,0 +1,86 @@
+name: Bug report
+description: Report a problem with docs, install scripts, examples, or release artifacts.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        EN/RU accepted. Do not report security issues here; use SECURITY.md.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Install script (scripts/)
+        - Documentation (docs/)
+        - Examples (examples/)
+        - Release artifact/checksum (releases/)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Interton version (example: 0.6.2) and where you got it (Releases / this repo).
+      placeholder: "0.6.2 (GitHub Releases)"
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: OS and architecture.
+      placeholder: "Windows 11 x64 / macOS arm64 / Ubuntu 22.04 x86_64"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal, exact steps.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior / logs
+      description: Paste output and error messages. Redact secrets.
+      render: text
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues.
+          required: true
+        - label: This is not a security vulnerability report.
+          required: true
+

@@ -1,0 +1,10 @@
+adding std.io
+
+type Result = success(value) | error(message);
+type random generator<int> = int;
+type MaybeString = ok(value) | none();
+
+call main() -> int {
+    inscribe("Type aliases declared:", "Result", "random_generator<int>", "MaybeString")
+    return 0
+}

@@ -1,0 +1,9 @@
+adding std.io
+adding quantum.core
+
+call main() -> int {
+    quant_i q = H(|0>)
+    int bit = measure(q)
+    inscribe("measured:", bit)
+    return 0
+}

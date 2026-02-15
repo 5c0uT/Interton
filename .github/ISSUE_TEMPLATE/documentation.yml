@@ -1,0 +1,44 @@
+name: Documentation issue
+description: Report unclear, incorrect, or missing documentation.
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        EN/RU accepted. Please reference exact page paths (for example `docs/ru/00-quick-start.md`).
+
+  - type: input
+    id: page
+    attributes:
+      label: Page / location
+      placeholder: "docs/en/00-quick-start.md"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options:
+        - EN
+        - RU
+        - Both
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+      description: Describe what is confusing/incorrect/missing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested fix (optional)
+      description: If you have a concrete wording or structure change, add it here.
+    validations:
+      required: false
+

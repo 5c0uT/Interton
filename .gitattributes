@@ -1,0 +1,8 @@
+# GitHub Linguist language override for Interton source files.
+#
+# Note: `linguist-language` must match a language name known to GitHub Linguist.
+# If "Interton" is not registered upstream in github-linguist, GitHub may ignore
+# this override (it will not create a new language entry automatically).
+*.it linguist-language=Interton
+*.it linguist-detectable=true
+

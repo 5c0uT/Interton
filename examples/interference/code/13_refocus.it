@@ -1,0 +1,13 @@
+adding std.io
+
+call main() -> int {
+    int value = 42
+    int tweaked = refocus(value)
+    inscribe("original:", value)
+    inscribe("refocus value:", tweaked)
+
+    string statsObj = refocus()
+    inscribe("refocus hits:", statsObj.stats.hits)
+    inscribe("refocus seed:", statsObj.stats.seed)
+    return 0
+}

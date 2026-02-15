@@ -1,0 +1,23 @@
+adding std.io
+
+call main() -> int {
+    string textPath = "examples/all_examples/tmp_demo.txt"
+    string jsonPath = "examples/all_examples/tmp_demo.json"
+
+    write_file(textPath, "Line1\nLine2\n")
+    append_file(textPath, "Line3\n")
+
+    string content = read_file(textPath)
+    inscribe("file content:")
+    inscribe(content)
+
+    string[] lines = read_lines(textPath)
+    inscribe("lines count:", |lines|)
+    inscribe("line 1:", lines[0])
+
+    int[] nums = [1, 2, 3]
+    write_json(jsonPath, nums)
+    string json_data = read_json(jsonPath)
+    inscribe("json data:", json_data)
+    return 0
+}

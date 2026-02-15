@@ -1,0 +1,12 @@
+adding std.io
+
+call main() -> int {
+    optional<int> maybe_value = none
+    inscribe("maybe:", maybe_value)
+    maybe_value = some(12)
+    inscribe("maybe value:", maybe_value.value)
+
+    optional<string> maybe_name = some("mermaid")
+    inscribe("maybe name:", maybe_name.value)
+    return 0
+}

@@ -1,0 +1,6 @@
+# Local test outputs
+test_results/
+
+# Auto-generated example run logs (timestamped)
+examples/**/*_[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]_[0-9][0-9]-[0-9][0-9]-[0-9][0-9]*.txt
+

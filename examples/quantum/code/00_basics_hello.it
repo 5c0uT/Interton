@@ -1,0 +1,10 @@
+adding std.io
+
+call main() -> int {
+    int count = 3
+    float ratio = 1.25
+    bool ok = true
+    string name = "interton"
+    inscribe("hello:", name, "count:", count, "ratio:", ratio, "ok:", ok)
+    return 0
+}

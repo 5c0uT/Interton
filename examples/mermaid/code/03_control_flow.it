@@ -1,0 +1,23 @@
+adding std.io
+
+call main() -> int {
+    int total = 0
+    for int i = 0; i < 5; i = i + 1 {
+        total = total + i
+    }
+
+    int count = 0
+    while count < 3 {
+        count = count + 1
+    }
+
+    if total > 5 {
+        inscribe("total > 5:", total)
+    } else {
+        inscribe("total <= 5:", total)
+    }
+
+    bool ok = (count == 3)
+    inscribe("count ok:", ok)
+    return 0
+}

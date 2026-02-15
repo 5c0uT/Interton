@@ -1,0 +1,213 @@
+%%tunnel config%%{
+similarity_threshold: 0.85
+max_cache_size: 128
+delta: 0.03
+enabled: true
+}
+
+adding std.io
+adding std.math.basic
+adding std.math.statistics
+adding std.math.linear
+adding std.math.advanced
+adding metadata.core
+adding metadata.administrative
+adding metadata.structural
+adding metadata.descriptive
+adding metadata.technical
+adding quantum.core
+adding quantum.gates
+adding interf.core
+adding interf.math
+adding interf.wave
+adding interference.light
+adding interference.sound
+adding interference.quantum
+adding interference.advanced
+adding std.system.files
+adding std.system.memory
+adding std.system.threads
+adding rendering.ray
+
+using mermaid.struct;
+using mermaid.cluster(0);
+
+type Result = ok(value) | error(message);
+
+structural_metadata DataShape {
+    schema: { fields: ["id", "value"], types: ["int", "float"] };
+    version: "v1";
+}
+
+descriptive_metadata DatasetInfo {
+    title: "All-in-one dataset";
+    tags: ["mermaid", "interton"];
+    summary: "Aggregated feature showcase";
+}
+
+technical_metadata BuildInfo {
+    compiler: "intertonc";
+    target: "run-mode";
+    flags: ["--run"];
+}
+
+domain_entity Asset {
+    metadata {
+        category: "asset";
+        description: "All-in-one asset";
+        version: "v1";
+    }
+    attribute id: int {
+        metadata {
+            unit: "idx";
+        }
+    }
+}
+
+administrative_metadata AccessPolicy {
+    resource: "all_in_one";
+    access_control: [
+        { role: "reader", permissions: ["read"] },
+        { role: "writer", permissions: ["read", "write"] }
+    ],
+    lifecycle: {
+        creation_date: "2026-02-05",
+        retention_period: "1 year"
+    }
+}
+
+fact parent("alice", "bob");
+fact parent("bob", "carol");
+rule grandparent(x, z) -> parent(x, y) && parent(y, z);
+
+pure call add(x: int, y: int) -> int {
+    return x + y
+}
+
+procedure log_line(msg: string) -> void {
+    inscribe(msg)
+}
+
+%%tunnel config%%
+call compute_mix(a: float, b: float) -> float {
+    return (a * 2.0 + b * 3.0) / (a + b + 1.0)
+}
+
+class Counter {
+    int value;
+
+    public call init(start: int) -> void {
+        this.value = start
+    }
+
+    public call inc() -> int {
+        this.value = this.value + 1
+        return this.value
+    }
+}
+
+adding <py> py_inc(x: int) -> int {
+    return x + 1
+}
+
+call main() -> int {
+    log_line("all_in_one start")
+
+    int[] values = [1, 2, 3, 4]
+    int total = 0
+    for int i = 0; i < |values|; i = i + 1 {
+        total += values[i]
+    }
+
+    int pow = 2 ** 3
+    int idiv = 9 // 2
+    bool eq = 3 === 3
+    bool gtlt = 4 >< 3
+
+    int toned = <toned up> total
+    int ref = refocus(42)
+
+    float mix = compute_mix(2.0, 4.0)
+    inscribe("tunnel hits:", get_tunnel_stats("compute_mix").hits)
+
+    optional<int> maybe = some(7)
+    inscribe("maybe:", maybe.value)
+
+    Counter c = new Counter(2)
+    inscribe("counter:", c.inc())
+
+    float[] data = [1.0, 2.0, 3.0]
+    inscribe("mean:", std.math.statistics.mean(data))
+    inscribe("dot:", std.math.linear.dot(data, [1.0, 1.0, 1.0]))
+
+    interf_f series = 0.0
+    for int i = 0; i < 3; i = i + 1 {
+        series = float(i)
+    }
+    inscribe("interf mean:", interf.math.mean(series))
+
+    interf_f wave_a = 0.0
+    interf_f wave_b = 0.0
+    for int i = 0; i < 4; i = i + 1 {
+        wave_a = float(i)
+        wave_b = float(i) * 0.5
+    }
+    interf_f combined = interf.wave.interfere(wave_a, wave_b)
+    inscribe("wave coherence:", interf.wave.coherence(wave_a, wave_b))
+    inscribe("wave power:", interf.wave.interference_power(combined))
+
+    float wavelength = 0.0000005
+    string young = interference.light.young_experiment(wavelength, 0.0003, 1.2)
+    string beats = interference.sound.sound_beats(440.0, 444.0, 1.0, 1.0)
+    float[] amps = [0.6, 0.4]
+    string qint = interference.quantum.apply_quantum_interference(amps, 0.5)
+    string adv = interference.advanced.young_experiment(wavelength, 0.0003, 1.2)
+    inscribe("young spacing:", young.fringe_spacing)
+    inscribe("beats freq:", beats.beat_frequency)
+    inscribe("quantum interference:", qint.interference_value)
+    inscribe("advanced spacing:", adv.fringe_spacing)
+
+    quant_i q = H(|0>)
+    int bit = measure(q)
+    inscribe("quant bit:", bit)
+
+    string cfg = mermaid_config()
+    inscribe("mermaid cfg:", cfg)
+
+    string path = "examples/all_examples/tmp_all_in_one.txt"
+    write_file(path, "hello")
+    string content = read_file(path)
+    inscribe("file:", content)
+
+    string sys_path = "examples/all_examples/tmp_all_in_one_sys.txt"
+    std.system.files.write_file(sys_path, "system demo\n")
+    string sys_content = std.system.files.read_file(sys_path)
+    int mem = std.system.memory.used_bytes()
+    int cores = std.system.threads.hardware_concurrency()
+    inscribe("sys file:", sys_content)
+    inscribe("sys mem:", mem, "cores:", cores)
+
+    int py_out = py_inc(5)
+    inscribe("py inc:", py_out)
+
+    query grandparent("alice", "carol");
+    inscribe("grandparent:", _last_query)
+
+    string scene = rendering.ray.ray_scene(
+        objects=[
+            rendering.ray.plane(normal=[0,1,0], distance=0, material=rendering.ray.diffuse(color=[0.3, 0.3, 0.3])),
+            rendering.ray.sphere(center=[0, 1, 0], radius=1.0, material=rendering.ray.diffuse(color=[0.3, 0.7, 0.9]))
+        ],
+        lights=[rendering.ray.point_light(position=[0, 4, 3], intensity=1.0)],
+        camera_settings=rendering.ray.camera(origin=[0, 2, 5], look_at=[0, 1, 0], fov=45.0, resolution=[200,150])
+    )
+    string output = rendering.ray.render(scene, scene.camera_settings, samples=2)
+    rendering.ray.write_image(output, "ray_all_in_one.png")
+
+    Asset item = Asset(id=1)
+    inscribe("metadata:", DataShape.schema, DatasetInfo.title, BuildInfo.target)
+    inscribe("asset:", item.metadata.category, item.id)
+    inscribe("policy:", AccessPolicy.resource)
+    inscribe("all_in_one done")
+    return 0
+}

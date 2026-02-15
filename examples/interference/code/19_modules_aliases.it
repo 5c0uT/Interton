@@ -1,0 +1,12 @@
+adding std.io
+adding std.math.basic as mb
+
+using mb
+
+call main() -> int {
+    int[] data = [3, 1, 4, 1, 5]
+    std.io.inscribe("sum:", sum(data))
+    std.io.inscribe("sorted:", sorted(data))
+    std.io.inscribe("max:", max(data))
+    return 0
+}

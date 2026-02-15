@@ -1,0 +1,17 @@
+adding std.io
+
+call main() -> int {
+    string name = "Interton"
+    int count = 3
+    float pi = 3.14159
+    string msg = f"Hello {name}, count={count}, pi={pi}"
+    string raw = r"D:\data\file.txt"
+    string multi = f"""Block:
+{name}
+{count + 1}
+"""
+    inscribe(msg)
+    inscribe("raw:", raw)
+    inscribe(multi)
+    return 0
+}
