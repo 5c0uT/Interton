@@ -252,12 +252,3 @@ intertonc --run hello_world.it
 12. `users/en/11-standard-library-reference.md` - built-ins and stdlib reference.
 13. `users/en/12-mermaid-guide.md` - Mermaid runtime parameters and diagnostics.
 14. `users/release-checklist.md` - exact cross-platform release upload checklist.
-
-## Scope
-
-This user documentation focuses on writing and running Interton programs.
-
-Эта документация ориентирована на пользователя языка: как писать и запускать программы на Interton.
-
-Compiler internals are documented in developer docs under `docs/developers`.
-
