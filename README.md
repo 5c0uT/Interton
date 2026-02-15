@@ -1,7 +1,7 @@
 # Interton User Documentation / Пользовательская документация Interton
 
 <p align="center">
-  <img src="../Interton.svg" alt="Interton logo" width="560">
+  <img src=".github/assets/Interton.svg" alt="Interton logo" width="560">
 </p>
 
 [![Repository](https://img.shields.io/badge/GitHub-5c0uT%2FInterton-black?logo=github)](https://github.com/5c0uT/Interton)
