@@ -1,0 +1,35 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\all_examples\all_in_one.it
+
+Дата и время запуска: 2026-02-14 03:10:13.266306
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+all_in_one start
+tunnel hits: 0
+maybe: 7
+counter: 4
+mean: 2
+dot: 6
+interf mean: 1.5
+wave coherence: 0.5
+wave power: 10.5
+young spacing: 0.002
+beats freq: 4
+quantum interference: 
+advanced spacing: 0.002
+quant bit: 0
+mermaid cfg: mermaid_config
+file: hello
+sys file: system demo
+
+sys mem: 21606400 cores: 16
+py inc: 6
+grandparent: true
+metadata: metadata All-in-one dataset run-mode
+asset: asset 1
+policy: all_in_one
+all_in_one done
+

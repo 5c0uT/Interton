@@ -1,0 +1,13 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\logic_fact_rule_query.it
+
+Дата и время запуска: 2026-02-14 03:10:20.156211
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+grandparent alice->carol: true
+parent bob->carol: true
+parent alice->carol: false
+

@@ -1,0 +1,22 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\calculator.it
+
+Дата и время запуска: 2026-02-14 03:10:15.410927
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+=== Interton Calculator ===
+Basic Arithmetic and meta-wrapped expressions
+Integer Operations: 15 4
+a + b = 19 a - b = 11 a * b = 60 a / b = 3 a % b = 3
+Floating-Point Operations: 7.5 2.5
+x + y = 10 x - y = 5 x * y = 18.75 x / y = 3
+Mathematical Functions: sqrt(16) = 4 pow(2,8) = 256 sin(pi/2) = 1 log(100) = 4.60517
+Comparison Operations: a > b: true x == y: false a != b: true (a > 10) and (b < 5): true
+
+Helper Functions:
+Result: 12
+Factorial(6): 720 Fibonacci(10): 55
+

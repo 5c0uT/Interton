@@ -1,0 +1,11 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\mermaid_config_demo.it
+
+Дата и время запуска: 2026-02-14 03:10:21.707684
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+mermaid_config: {"struct": true, "cluster_mode": 1, "cluster": true, "deep": true, "deep_force_no_cache": false, "deep_failover": true, "deep_retry_count": 0, "deep_config": "custom_rules"}
+

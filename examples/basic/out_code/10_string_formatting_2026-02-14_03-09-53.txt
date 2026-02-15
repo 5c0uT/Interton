@@ -1,0 +1,19 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\all_examples\10_string_formatting.it
+
+Дата и время запуска: 2026-02-14 03:09:53.175442
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+Hello Interton, count=3, pi=3.14159
+raw: D:\data\file.txt
+Block:
+
+Interton
+
+4
+
+
+

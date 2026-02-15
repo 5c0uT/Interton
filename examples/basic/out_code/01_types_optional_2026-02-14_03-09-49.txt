@@ -1,0 +1,13 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\all_examples\01_types_optional.it
+
+Дата и время запуска: 2026-02-14 03:09:49.840304
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+maybe: none
+maybe value: 12
+maybe name: mermaid
+

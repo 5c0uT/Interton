@@ -1,0 +1,11 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\type_aliases.it
+
+Дата и время запуска: 2026-02-14 03:10:34.054281
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+Type aliases declared: Result random_generator<int> MaybeString
+

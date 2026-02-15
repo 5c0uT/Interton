@@ -1,0 +1,11 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\ray_tracing\ray_tracing_emissive_strip_hires.it
+
+Дата и время запуска: 2026-02-14 03:12:19.787686
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+ray_emissive_strip_hires done
+

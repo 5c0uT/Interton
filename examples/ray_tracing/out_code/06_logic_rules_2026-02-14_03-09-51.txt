@@ -1,0 +1,13 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\all_examples\06_logic_rules.it
+
+Дата и время запуска: 2026-02-14 03:09:51.775835
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+grandparent alice->carol: true
+parent bob->carol: true
+parent alice->carol: false
+

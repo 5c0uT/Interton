@@ -1,0 +1,15 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\all_examples\26_interference_light_sound.it
+
+Дата и время запуска: 2026-02-14 03:10:11.179195
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+stationary spacing: 0.002
+young spacing: 0.002
+film color: dark
+beats freq: 4
+advanced spacing: 0.002
+

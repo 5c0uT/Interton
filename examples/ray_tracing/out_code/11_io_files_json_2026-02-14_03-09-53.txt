@@ -1,0 +1,18 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\all_examples\11_io_files_json.it
+
+Дата и время запуска: 2026-02-14 03:09:53.593265
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+file content:
+Line1
+Line2
+Line3
+
+lines count: 3
+line 1: Line1
+json data: [1, 2, 3]
+

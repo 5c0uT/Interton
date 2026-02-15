@@ -1,0 +1,17 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\refocus_stress.it
+
+Дата и время запуска: 2026-02-14 03:10:29.900147
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+refocus int counts: 30 7 163
+refocus float: 1.20325
+refocus bool: true
+refocus string: xR2O8H54Xd9x
+refocus optional some: some(1)
+refocus optional none: none
+refocus bytes length: 16
+
