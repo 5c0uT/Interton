@@ -1,0 +1,27 @@
+adding std.io
+
+adding <py> calculate_pi(iterations: int) -> float {
+    import math
+    pi_approx = 0.0
+    for i in range(iterations):
+        pi_approx += ((-1) ** i) / (2 * i + 1)
+    return 4.0 * pi_approx
+}
+
+adding <cpp> process_data(data: int[]) -> int[] {
+    std::vector<int> result;
+    result.reserve(data.size());
+    for (int val : data) {
+        result.push_back(val * 2);
+    }
+    return result;
+}
+
+call main() -> int {
+    int[] numbers = [1, 2, 3, 4, 5]
+    float estimate = calculate_pi(750)
+    int[] doubled = process_data(numbers)
+    inscribe("Pi estimate:", estimate)
+    inscribe("Doubled array:", doubled)
+    return 0
+}

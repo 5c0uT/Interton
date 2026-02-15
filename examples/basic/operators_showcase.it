@@ -1,0 +1,13 @@
+adding std.io
+
+call main() -> int {
+    int a = 2 ** 3
+    int b = 10 %% 4
+    bool eq = 3 === 3
+    bool ne = 3 !== 4
+    inscribe("2 ** 3:", a)
+    inscribe("10 %% 4:", b)
+    inscribe("3 === 3:", eq)
+    inscribe("3 !== 4:", ne)
+    return 0
+}

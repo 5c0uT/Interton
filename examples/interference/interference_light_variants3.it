@@ -1,0 +1,13 @@
+adding std.io
+adding interference.light
+
+call main() -> int {
+    float wavelength = 0.00000055
+    float slit = 0.0003
+    float screen = 1.0
+    string young = interference.light.young_experiment(wavelength, slit, screen)
+    inscribe("spacing:", young.fringe_spacing)
+    string film = interference.light.thin_film_interference(0.000001, 1.33, wavelength, 0.2)
+    inscribe("film:", film.film_color)
+    return 0
+}

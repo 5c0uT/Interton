@@ -1,0 +1,14 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <py> py_upper(text: string) -> string {
+    return text.upper()
+}
+
+call main() -> int {
+    string out = py_upper("mermaid py")
+    inscribe("py upper:", out)
+    return 0
+}

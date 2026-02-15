@@ -1,0 +1,24 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+
+adding <py> py_seed(n: int) -> int {
+    return n * 2
+}
+
+adding <c> c_mix(x: int) -> int {
+    return x + 1;
+}
+
+adding <j> j_label(x: int) -> string {
+    return "java:" + x;
+}
+
+call main() -> int {
+    int base = py_seed(6)
+    int mid = c_mix(base)
+    string out = j_label(mid)
+    inscribe("py->c->java:", out)
+    return 0
+}

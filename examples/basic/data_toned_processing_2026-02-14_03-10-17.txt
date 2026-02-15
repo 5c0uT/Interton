@@ -1,0 +1,13 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\data_toned_processing.it
+
+Дата и время запуска: 2026-02-14 03:10:17.246989
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+Original readings: [1, 2, 3.5]
+Tuned readings: [1.8, 2.8, 4.3]
+Data tonality level stored in data_toned metadata? 0.5
+

@@ -1,0 +1,31 @@
+adding std.io
+
+call main() -> int {
+    string textPath = "examples/basic/tmp_demo.txt"
+    string jsonPath = "examples/basic/tmp_demo.json"
+
+    write_file(textPath, "Line1\nLine2\n")
+    append_file(textPath, "Line3\n")
+
+    string content = read_file(textPath)
+    inscribe("file content:")
+    inscribe(content)
+
+    string[] lines = read_lines(textPath)
+    inscribe("lines count:", |lines|)
+    inscribe("line 1:", lines[0])
+
+    int[] nums = [1, 2, 3]
+    write_json(jsonPath, nums)
+    string json_data = read_json(jsonPath)
+    inscribe("json data:", json_data)
+
+    string stream = open_file(textPath)
+    string chunk1 = stream.read_chunk(5)
+    string chunk2 = stream.read_chunk(5)
+    inscribe("chunk1:", chunk1)
+    inscribe("chunk2:", chunk2)
+    inscribe("eof:", stream.eof())
+    stream.close()
+    return 0
+}

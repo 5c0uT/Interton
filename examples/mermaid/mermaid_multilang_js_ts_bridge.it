@@ -1,0 +1,26 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(bridge_rules);
+
+adding <js> js_tokens(text: string) -> int[] {
+    var parts = text.split(" ");
+    var out = [];
+    for (var i = 0; i < parts.length; i++) {
+        out.push(parts[i].length);
+    }
+    return out;
+}
+
+adding <py> py_sum(data: int[]) -> int {
+    return int(sum(data))
+}
+
+call main() -> int {
+    int[] ids = js_tokens("mermaid js ts bridge")
+    int total = py_sum(ids)
+    inscribe("js->py sum:", total)
+    return 0
+}
+

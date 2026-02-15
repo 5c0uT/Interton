@@ -1,0 +1,11 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\mermaid\mermaid_struct_pipeline_variants3.it
+
+Дата и время запуска: 2026-02-14 03:12:01.223601
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+struct cfg: mermaid_config
+

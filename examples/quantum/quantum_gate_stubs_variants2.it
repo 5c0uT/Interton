@@ -1,0 +1,12 @@
+adding std.io
+adding quantum.core
+
+call main() -> int {
+    quant_i q = |0>
+    q = Rx(q, 0.1)
+    q = Ry(q, 0.2)
+    q = Rz(q, 0.3)
+    int m = measure(q)
+    inscribe("m:", m)
+    return 0
+}

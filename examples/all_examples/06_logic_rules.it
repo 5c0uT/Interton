@@ -1,0 +1,17 @@
+adding std.io
+
+fact parent("alice", "bob");
+fact parent("bob", "carol");
+rule grandparent(x, z) -> parent(x, y) && parent(y, z);
+
+call main() -> int {
+    query grandparent("alice", "carol");
+    inscribe("grandparent alice->carol:", _last_query)
+
+    query parent("bob", "carol");
+    inscribe("parent bob->carol:", _last_query)
+
+    query parent("alice", "carol");
+    inscribe("parent alice->carol:", _last_query)
+    return 0
+}

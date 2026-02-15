@@ -1,0 +1,42 @@
+adding std.io
+
+call main() -> int {
+    int input = 10
+    int iterations = 200
+    int count_minus_one = 0
+    int count_equal = 0
+    int count_other = 0
+
+    for int i = 0; i < iterations; i = i + 1 {
+        int value = refocus(input)
+        if value == input - 1 {
+            count_minus_one = count_minus_one + 1
+        } else if value == input {
+            count_equal = count_equal + 1
+        } else {
+            count_other = count_other + 1
+        }
+    }
+
+    inscribe("refocus int counts:", count_minus_one, count_equal, count_other)
+
+    float f_value = refocus(1.5, 0.5, 3.5)
+    bool b_value = refocus(true)
+    string s_value = refocus("seed", 12)
+
+    optional<int> opt_value = some(7)
+    optional<int> opt_random = refocus(opt_value)
+    optional<int> opt_none = none
+    optional<int> opt_none_result = refocus(opt_none)
+
+    inscribe("refocus float:", f_value)
+    inscribe("refocus bool:", b_value)
+    inscribe("refocus string:", s_value)
+    inscribe("refocus optional some:", opt_random)
+    inscribe("refocus optional none:", opt_none_result)
+
+    int[] blob = refocus_bytes(16)
+    inscribe("refocus bytes length:", |blob|)
+
+    return 0
+}

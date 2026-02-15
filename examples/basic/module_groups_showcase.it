@@ -1,0 +1,12 @@
+adding std.io
+adding std.math.basic as mb
+
+using mb;
+
+call main() -> int {
+    int[] nums = [2, 4, 6]
+    int total = sum(nums)
+    std.io.inscribe("nums:", nums)
+    std.io.inscribe("sum:", total)
+    return 0
+}

@@ -1,0 +1,13 @@
+adding std.io
+
+using mermaid {
+    struct,
+    cluster(0),
+    deep
+};
+
+call main() -> int {
+    string cfg = mermaid_config_json()
+    inscribe("mermaid:", cfg)
+    return 0
+}

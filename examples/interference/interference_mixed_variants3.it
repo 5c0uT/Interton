@@ -1,0 +1,11 @@
+adding std.io
+adding interference.light
+adding interference.sound
+
+call main() -> int {
+    string light = interference.light.young_experiment(0.0000005, 0.0003, 1.1)
+    string sound = interference.sound.sound_beats(220.0, 222.0, 1.0, 1.0)
+    inscribe("spacing:", light.fringe_spacing)
+    inscribe("beats:", sound.beat_frequency)
+    return 0
+}

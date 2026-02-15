@@ -1,0 +1,19 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <py> py_seed(x: int) -> int {
+    return x * 3
+}
+
+adding <c> c_shift(x: int) -> int {
+    return x + 7;
+}
+
+call main() -> int {
+    int base = py_seed(4)
+    int out = c_shift(base)
+    inscribe("py->c:", out)
+    return 0
+}

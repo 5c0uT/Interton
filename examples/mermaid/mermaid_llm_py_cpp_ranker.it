@@ -1,0 +1,32 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(llm_bridge_rules);
+
+adding <py> llm_embed_vector(text: string) -> float[] {
+    import torch
+    torch.manual_seed(101)
+    tokens = text.split()
+    vocab = 10
+    dim = 6
+    ids = [len(t) % vocab for t in tokens]
+    emb = torch.randn(vocab, dim)
+    vec = emb[torch.tensor(ids)].mean(dim=0)
+    return vec.tolist()
+}
+
+adding <cpp> llm_rank(vec: float[]) -> float {
+    if (vec.empty()) return 0.0;
+    double sum = 0.0;
+    for (double v : vec) sum += v;
+    return sum / static_cast<double>(vec.size());
+}
+
+call main() -> int {
+    float[] vec = llm_embed_vector("interton llm ranker")
+    float score = llm_rank(vec)
+    inscribe("rank_score:", score)
+    return 0
+}
+

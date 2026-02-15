@@ -1,0 +1,24 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(llm_rules);
+
+adding <py> llm_embed_sum(text: string) -> float {
+    import torch
+    torch.manual_seed(42)
+    tokens = text.split()
+    vocab = 16
+    dim = 8
+    ids = [len(t) % vocab for t in tokens]
+    emb = torch.randn(vocab, dim)
+    vec = emb[torch.tensor(ids)].sum()
+    return float(vec.item())
+}
+
+call main() -> int {
+    float score = llm_embed_sum("interton mermaid llm test")
+    inscribe("embed_sum:", score)
+    return 0
+}
+

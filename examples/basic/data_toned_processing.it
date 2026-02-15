@@ -1,0 +1,19 @@
+adding std.io
+
+<toned data_toned>
+call adjust_tone(values: float[]) -> float[] {
+    float[] result = values
+    for int i = 0; i < |values|; i = i + 1 {
+        result[i] = values[i] + 0.3
+    }
+    return result
+}
+
+call main() -> int {
+    float[] readings = [1.0, 2.0, 3.5]
+    float[] tuned = adjust_tone(readings)
+    inscribe("Original readings:", readings)
+    inscribe("Tuned readings:", tuned)
+    inscribe("Data tonality level stored in data_toned metadata?", data_toned.level)
+    return 0
+}

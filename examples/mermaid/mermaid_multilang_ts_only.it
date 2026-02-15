@@ -1,0 +1,17 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <ts> ts_sum(values: int[]) -> int {
+    let total = 0;
+    for (let v of values) { total += v; }
+    return total;
+}
+
+call main() -> int {
+    int[] values = [2, 4, 6]
+    int out = ts_sum(values)
+    inscribe("ts sum:", out)
+    return 0
+}

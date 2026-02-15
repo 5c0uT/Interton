@@ -1,0 +1,10 @@
+using mermaid {
+    struct,
+    cluster(1),
+    deep(custom_rules)
+};
+
+call main() -> void {
+    string cfg = mermaid_config_json();
+    inscribe("mermaid_config:", cfg);
+}

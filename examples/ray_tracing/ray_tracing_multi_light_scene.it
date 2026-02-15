@@ -1,0 +1,22 @@
+adding rendering.ray
+adding std.io
+
+call main() -> int {
+    string scene = rendering.ray.ray_scene(
+        objects=[
+            rendering.ray.plane(normal=[0,1,0], distance=0, material=rendering.ray.diffuse(color=[0.15, 0.15, 0.18])),
+            rendering.ray.sphere(center=[-1.5, 1, 0], radius=1.0, material=rendering.ray.diffuse(color=[0.8, 0.2, 0.2])),
+            rendering.ray.sphere(center=[1.5, 1, 0], radius=1.0, material=rendering.ray.diffuse(color=[0.2, 0.6, 0.9])),
+            rendering.ray.sphere(center=[0, 0.6, -2], radius=0.6, material=rendering.ray.emissive(color=[1, 0.9, 0.7]))
+        ],
+        lights=[
+            rendering.ray.point_light(position=[-3, 6, 4], intensity=1.0),
+            rendering.ray.point_light(position=[3, 4, -2], intensity=0.8)
+        ],
+        camera_settings=rendering.ray.camera(origin=[0, 2.2, 7], look_at=[0, 1, 0], fov=50.0, resolution=[480,360])
+    )
+    string output = rendering.ray.render(scene, scene.camera_settings, samples=6)
+    rendering.ray.write_image(output, "ray_multi_light.png")
+    inscribe("ray_multi_light done")
+    return 0
+}

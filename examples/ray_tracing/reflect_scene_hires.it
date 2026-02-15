@@ -1,0 +1,17 @@
+adding rendering.ray
+adding std.io
+
+call main() -> int {
+    string scene = rendering.ray.ray_scene(
+        objects=[
+            rendering.ray.sphere(center=[-2, 1, 0], radius=1.0, material=rendering.ray.diffuse(color=[0.5, 0.1, 0.1])),
+            rendering.ray.plane(normal=[0,1,0], distance=0, material=rendering.ray.diffuse(color=[0.2,0.2,0.2]))
+        ],
+        lights=[rendering.ray.point_light(position=[4, 8, -3], intensity=1.5)],
+        camera_settings=rendering.ray.camera(origin=[0,2,6], look_at=[0,1,0], fov=60.0, resolution=[1280,720])
+    )
+    string reflection = rendering.ray.render(scene, scene.camera_settings, samples=4)
+    rendering.ray.write_image(reflection, "reflect_scene_hires.png")
+    inscribe("Reflection hires complete")
+    return 0
+}

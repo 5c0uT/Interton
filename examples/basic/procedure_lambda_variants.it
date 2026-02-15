@@ -1,0 +1,21 @@
+adding std.io
+
+pure call inc(x: int) -> int {
+    return x + 1
+}
+
+pure call add(a: int, b: int) -> int {
+    return a + b
+}
+
+procedure announce(msg: string) -> void {
+    inscribe("announce:", msg)
+}
+
+call main() -> int {
+    announce("start")
+    int base = 10
+    inscribe("inc:", inc(base))
+    inscribe("add:", add(base, 7))
+    return 0
+}

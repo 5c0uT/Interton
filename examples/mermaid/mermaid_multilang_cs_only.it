@@ -1,0 +1,14 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <cs> cs_concat(a: string, b: string) -> string {
+    return a + b;
+}
+
+call main() -> int {
+    string out = cs_concat("mer", "maid")
+    inscribe("cs concat:", out)
+    return 0
+}

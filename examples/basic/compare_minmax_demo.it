@@ -1,0 +1,9 @@
+adding std.io
+
+call main() -> int {
+    inscribe("7 >< 3 =", 7 >< 3)
+    inscribe("7 <> 3 =", 7 <> 3)
+    inscribe("2.5 >< 9 =", 2.5 >< 9)
+    inscribe("2.5 <> 9 =", 2.5 <> 9)
+    return 0
+}

@@ -1,0 +1,14 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+
+adding <cpp> cpp_scale(value: int, factor: int) -> int {
+    return value * factor;
+}
+
+call main() -> int {
+    int out = cpp_scale(7, 3)
+    inscribe("cpp scale:", out)
+    return 0
+}

@@ -1,0 +1,28 @@
+adding std.io
+
+<toned up>
+call boost(x: float) -> float {
+    return x
+}
+
+call main() -> int {
+    <toned up>int a = 3
+    <toned down>int b = 8
+    <toned up by 1>string s = "z"
+    <toned down by 0.2>float f = 5.0
+
+    <toned group up>
+    {
+        int g1 = 2
+        int g2 = 4
+        inscribe("group:", g1, g2)
+    }
+
+    <toned operation>
+    float combo = <toned up>2.0 + <toned down>4.0
+    float boosted = boost(1.5)
+
+    inscribe("a:", a, "b:", b, "s:", s, "f:", f)
+    inscribe("combo:", combo, "boosted:", boosted)
+    return 0
+}

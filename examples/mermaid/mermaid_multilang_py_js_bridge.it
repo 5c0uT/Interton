@@ -1,0 +1,21 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(bridge_rules);
+
+adding <py> py_tokens(text: string) -> int[] {
+    return [len(t) for t in text.split()]
+}
+
+adding <js> js_join(ids: int[]) -> string {
+    return ids.join("-");
+}
+
+call main() -> int {
+    int[] ids = py_tokens("mermaid bridge py js")
+    string out = js_join(ids)
+    inscribe("py->js:", out)
+    return 0
+}
+

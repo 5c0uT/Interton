@@ -1,0 +1,12 @@
+adding std.io
+
+call main() -> int {
+    int a = 10
+    int b = <toned up> a
+    int c = <toned down by 2> b
+    string s = "tone"
+    string s2 = <toned up> s
+    inscribe("a:", a, "b:", b, "c:", c)
+    inscribe("s:", s, "s2:", s2)
+    return 0
+}

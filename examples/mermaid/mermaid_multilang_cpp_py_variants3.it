@@ -1,0 +1,19 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <cpp> cpp_inc(x: int) -> int {
+    return x + 1;
+}
+
+adding <py> py_double(x: int) -> int {
+    return x * 2
+}
+
+call main() -> int {
+    int v = cpp_inc(3)
+    int out = py_double(v)
+    inscribe("out:", out)
+    return 0
+}

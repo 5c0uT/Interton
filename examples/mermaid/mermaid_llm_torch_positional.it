@@ -1,0 +1,26 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(pos_rules);
+
+adding <py> llm_positional_score(ids: int[]) -> float {
+    import torch
+    if len(ids) == 0:
+        return 0.0
+    dim = 4
+    pos = torch.arange(len(ids), dtype=torch.float32).unsqueeze(1)
+    div = torch.exp(torch.arange(0, dim, 2, dtype=torch.float32) * (-torch.log(torch.tensor(10000.0)) / dim))
+    pe = torch.zeros(len(ids), dim)
+    pe[:, 0::2] = torch.sin(pos * div)
+    pe[:, 1::2] = torch.cos(pos * div)
+    return float(pe.sum().item())
+}
+
+call main() -> int {
+    int[] ids = [1, 2, 3]
+    float score = llm_positional_score(ids)
+    inscribe("pos_score:", score)
+    return 0
+}
+

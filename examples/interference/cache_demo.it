@@ -1,0 +1,156 @@
+adding std.io
+adding interf.core
+
+call main() -> int {
+    inscribe("=== Interference Cache Demonstration ===")
+    inscribe("")
+    
+    // Create interference caches
+    interf_i int_cache = 0
+    interf_f float_cache = 0.0
+    interf_i small_cache = 0  // Small cache to demonstrate eviction
+    
+    inscribe("1. Basic Cache Operations:")
+    inscribe("")
+    
+    // Add values to integer cache
+    inscribe("Adding values to integer cache:")
+    int_cache = 10
+    int_cache = 20
+    int_cache = 30
+    int_cache = 40
+    int_cache = 50
+    
+    inscribe("Integer cache contents:")
+    for int i = 0; i < |int_cache|; i = i + 1 {
+        inscribe("  [" + i.to_string() + "] = " + int_cache[i].to_string())
+    }
+    
+    inscribe("")
+    inscribe("2. Cache Access Methods:")
+    inscribe("First element: " + int_cache[0].to_string())
+    int last_index = |int_cache| - 1
+    if |int_cache| > 0 {
+        inscribe("Last element: " + int_cache[last_index].to_string())
+    } else {
+        inscribe("Last element: <empty>")
+    }
+    inscribe("Second element: " + int_cache[1].to_string())
+    inscribe("Cache size: " + |int_cache|.to_string())
+    
+    inscribe("")
+    inscribe("3. Float Cache Operations:")
+    
+    // Add values to float cache
+    float_cache = 1.5
+    float_cache = 2.7
+    float_cache = 3.1
+    float_cache = 4.9
+    
+    inscribe("Float cache contents:")
+    for int i = 0; i < |float_cache|; i = i + 1 {
+        inscribe("  [" + i.to_string() + "] = " + float_cache[i].to_string())
+    }
+    
+    inscribe("")
+    inscribe("4. Cache Eviction Demonstration:")
+    inscribe("Small cache (size 3) evolution:")
+    
+    // Demonstrate cache eviction with small cache
+    small_cache = 100
+    inscribe("After adding 100: [" + small_cache[0].to_string() + "]")
+    
+    small_cache = 200
+    inscribe("After adding 200: [" + small_cache[0].to_string() + ", " + small_cache[1].to_string() + "]")
+    
+    small_cache = 300
+    inscribe("After adding 300: [" + small_cache[0].to_string() + ", " + small_cache[1].to_string() + ", " + small_cache[2].to_string() + "]")
+    
+    small_cache = 400  // This should evict 100
+    inscribe("After adding 400: [" + small_cache[0].to_string() + ", " + small_cache[1].to_string() + ", " + small_cache[2].to_string() + "]")
+    inscribe("Note: First element 100 was evicted, now starts with 200")
+    
+    inscribe("")
+    inscribe("5. Cache Statistics:")
+    
+    // Get cache statistics
+    int total_items = |int_cache| + |float_cache| + |small_cache|
+    inscribe("Total items across all caches: " + total_items.to_string())
+    inscribe("Integer cache utilization: " + |int_cache|.to_string() + " items")
+    inscribe("Float cache utilization: " + |float_cache|.to_string() + " items")
+    
+    inscribe("")
+    inscribe("6. Cache Pattern Analysis:")
+    
+    // Analyze patterns in the cache
+    call analyze_cache_pattern(cache: interf_i) -> void {
+        inscribe("Cache pattern analysis:")
+        
+        if |cache| < 2 {
+            inscribe("  Not enough data for pattern analysis")
+            return
+        }
+        
+        // Simple trend analysis
+        int last_idx = |cache| - 1
+        int prev_idx = |cache| - 2
+        int last = cache[last_idx]
+        int previous = cache[prev_idx]
+        
+        if last > previous {
+            inscribe("  Trend: Increasing ↗")
+        } else if last < previous {
+            inscribe("  Trend: Decreasing ↘")
+        } else {
+            inscribe("  Trend: Stable →")
+        }
+        
+        // Simple volatility
+        int max_val = cache[0]
+        int min_val = cache[0]
+        
+        for int i = 1; i < |cache|; i = i + 1 {
+            if cache[i] > max_val {
+                max_val = cache[i]
+            }
+            if cache[i] < min_val {
+                min_val = cache[i]
+            }
+        }
+        
+        inscribe("  Range: " + min_val.to_string() + " to " + max_val.to_string())
+        inscribe("  Volatility: " + (max_val - min_val).to_string())
+    }
+    
+    analyze_cache_pattern(int_cache)
+    
+    inscribe("")
+    inscribe("7. Cache Operations with Expressions:")
+    
+    // Cache operations in expressions
+    interf_i result_cache = 0
+    for int i = 1; i <= 5; i = i + 1 {
+        int computed = i * i + 10  // Some computation
+        result_cache = computed
+        inscribe("Computed " + i.to_string() + "² + 10 = " + computed.to_string())
+    }
+    
+    inscribe("")
+    inscribe("Result cache final state:")
+    for int i = 0; i < |result_cache|; i = i + 1 {
+        inscribe("  [" + i.to_string() + "] = " + result_cache[i].to_string())
+    }
+    
+    inscribe("")
+    inscribe("8. Cache Clearing:")
+    
+    inscribe("Before clear - int_cache size: " + |int_cache|.to_string())
+    int_cache = 0  // Clear the cache by reassigning initial value
+    inscribe("After clear - int_cache size: " + |int_cache|.to_string())
+    
+    // Add new values after clear
+    int_cache = 999
+    inscribe("After adding new value: " + int_cache[0].to_string())
+    
+    return 0
+}

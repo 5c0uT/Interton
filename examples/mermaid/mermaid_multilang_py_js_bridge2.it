@@ -1,0 +1,19 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <py> py_numbers(n: int) -> int[] {
+    return [i for i in range(1, n + 1)]
+}
+
+adding <js> js_join(values: int[]) -> string {
+    return values.join(",");
+}
+
+call main() -> int {
+    int[] values = py_numbers(5)
+    string out = js_join(values)
+    inscribe("py->js:", out)
+    return 0
+}

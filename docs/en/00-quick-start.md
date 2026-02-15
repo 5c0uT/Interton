@@ -1,6 +1,6 @@
 # Interton: quick start (detailed user guide)
 
-Target version: `Interton beta-v_.6.1`
+Target version: `Interton beta-v_.6.2`
 
 ## 1. What you will complete in this guide
 
@@ -100,7 +100,7 @@ intertonc --help
 Expected output (sample):
 
 ```text
-Interton compiler beta-v_.6.1
+Interton compiler beta-v_.6.2
 Usage: interton_compiler [options] <file1> [file2 ...]
 ```
 
@@ -110,6 +110,12 @@ Automated path (recommended):
 
 ```bash
 bash scripts/install_interton.sh --yes
+```
+
+One-line loader without cloning:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
 ```
 
 The loader automatically:
@@ -197,12 +203,13 @@ Expected result: hash must match release `.sha256` file.
 2. `02-operators.md`
 3. `03-functions-procedures-lambdas.md`
 4. `04-classes-oop.md`
-5. `04-modules-libraries.md`
-6. `05-ffi.md`
-7. `06-metadata-toning-tunnel-refocus.md`
-8. `07-quantum-interference-ray.md`
-9. `08-cli-run-modes.md`
-10. `09-faq.md`
-11. `10-standard-library-reference.md`
-12. `11-mermaid-guide.md`
+5. `05-modules-libraries.md`
+6. `06-ffi.md`
+7. `07-metadata-toning-tunnel-refocus.md`
+8. `08-quantum-interference-ray.md`
+9. `09-cli-run-modes.md`
+10. `10-faq.md`
+11. `11-standard-library-reference.md`
+12. `12-mermaid-guide.md`
+
 

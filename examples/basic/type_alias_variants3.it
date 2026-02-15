@@ -1,0 +1,11 @@
+adding std.io
+
+type Result = ok(value) | err(message)
+type Pair = (a: int, b: int)
+
+call main() -> int {
+    Pair p = (3, 5)
+    inscribe("pair:", p.a, p.b)
+    inscribe("type aliases:", "Result", "Pair")
+    return 0
+}

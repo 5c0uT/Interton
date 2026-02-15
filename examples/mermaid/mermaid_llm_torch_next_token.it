@@ -1,0 +1,27 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(0);
+using mermaid.deep(next_token_rules);
+
+adding <py> llm_next_token(ids: int[]) -> int {
+    import torch
+    torch.manual_seed(11)
+    vocab = 12
+    dim = 6
+    if len(ids) == 0:
+        ids = [0]
+    emb = torch.randn(vocab, dim)
+    proj = torch.randn(dim, vocab)
+    x = emb[torch.tensor(ids)].mean(dim=0)
+    logits = x @ proj
+    return int(torch.argmax(logits).item())
+}
+
+call main() -> int {
+    int[] ids = [2, 4, 6]
+    int next = llm_next_token(ids)
+    inscribe("next_token:", next)
+    return 0
+}
+

@@ -1,0 +1,72 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\interference\cache_demo.it
+
+Дата и время запуска: 2026-02-14 03:10:35.270599
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+=== Interference Cache Demonstration ===
+
+1. Basic Cache Operations:
+
+Adding values to integer cache:
+Integer cache contents:
+  [0] = 10
+  [1] = 20
+  [2] = 30
+  [3] = 40
+  [4] = 50
+
+2. Cache Access Methods:
+First element: 10
+Last element: 50
+Second element: 20
+Cache size: 5
+
+3. Float Cache Operations:
+Float cache contents:
+  [0] = 1.5
+  [1] = 2.7
+  [2] = 3.1
+  [3] = 4.9
+
+4. Cache Eviction Demonstration:
+Small cache (size 3) evolution:
+After adding 100: [100]
+After adding 200: [100, 200]
+After adding 300: [100, 200, 300]
+After adding 400: [100, 200, 300]
+Note: First element 100 was evicted, now starts with 200
+
+5. Cache Statistics:
+Total items across all caches: 13
+Integer cache utilization: 5 items
+Float cache utilization: 4 items
+
+6. Cache Pattern Analysis:
+Cache pattern analysis:
+  Trend: Increasing в†—
+  Range: 10 to 50
+  Volatility: 40
+
+7. Cache Operations with Expressions:
+Computed 1ВІ + 10 = 11
+Computed 2ВІ + 10 = 14
+Computed 3ВІ + 10 = 19
+Computed 4ВІ + 10 = 26
+Computed 5ВІ + 10 = 35
+
+Result cache final state:
+  [0] = 11
+  [1] = 14
+  [2] = 19
+  [3] = 26
+  [4] = 35
+
+8. Cache Clearing:
+Before clear - int_cache size: 5
+After clear - int_cache size: 0
+After adding new value: 999
+

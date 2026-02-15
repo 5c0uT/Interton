@@ -1,0 +1,12 @@
+adding std.io
+
+call main() -> int {
+    int r1 = refocus(5, min=1, max=9)
+    float r2 = refocus(0.5, min=0.1, max=0.9)
+    string r3 = refocus("seed", length=6)
+    inscribe("r1:", r1)
+    inscribe("r2:", r2)
+    inscribe("r3:", r3)
+    inscribe("hits:", refocus(1).stats.hits)
+    return 0
+}

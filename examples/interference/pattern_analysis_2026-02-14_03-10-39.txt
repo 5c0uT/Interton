@@ -1,0 +1,72 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\interference\pattern_analysis.it
+
+Дата и время запуска: 2026-02-14 03:10:39.156738
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+=== Interference Pattern Analysis ===
+
+1. Generating Sample Data Patterns:
+
+Linear trend with noise:
+Discrete pattern:
+Oscillating data:
+
+2. Statistical Analysis:
+
+Time Series Statistics:
+  Mean: 22.3029
+  Standard Deviation: 7.21738
+  Variance: 52.0906
+  Data Points: 50
+
+Discrete Data Statistics:
+  Mean: 2
+  Unique Values: 3
+
+3. Pattern Detection:
+
+Linear Trend Analysis:
+  Slope: 0.525213
+  Pattern: Strong upward trend в†—
+
+Periodicity Analysis:
+  Dominant Frequency: 1
+  Period: 1 data points
+
+4. Pattern Classification:
+Time Series Pattern: oscillating
+Oscillating Data Pattern: oscillating
+
+5. Anomaly Detection:
+
+Anomaly detected at position 50: 100
+Total anomalies detected: 1
+
+6. Correlation Analysis:
+
+Correlation between datasets: 0.947414
+Interpretation: Strong positive correlation
+
+7. Pattern Prediction:
+
+Predicted next value: -90
+Prediction confidence: 0.5
+
+8. Pattern Visualization (Text-based):
+
+Pattern Visualization:
+         в–€                      
+       в–€в–€в–€в–€в–€            в–€в–€в–€в–€в–€в–€  
+      в–€в–€в–€в–€в–€в–€в–€в–€        в–€в–€в–€в–€в–€в–€в–€в–€в–€ 
+     в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€   в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€ 
+     в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€
+    в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€
+    в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€
+   в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€
+   в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€
+  в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€в–€
+

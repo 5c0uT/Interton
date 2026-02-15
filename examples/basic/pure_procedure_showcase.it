@@ -1,0 +1,16 @@
+adding std.io
+
+pure call square(x: int) -> int {
+    return x * x
+}
+
+procedure initialize_system() -> void {
+    inscribe("Initializing system...")
+}
+
+call main() -> int {
+    initialize_system()
+    int value = 6
+    inscribe("square:", square(value))
+    return 0
+}

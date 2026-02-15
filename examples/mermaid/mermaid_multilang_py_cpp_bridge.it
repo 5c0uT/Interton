@@ -1,0 +1,21 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <py> py_ids(text: string) -> int[] {
+    return [len(t) for t in text.split()]
+}
+
+adding <cpp> cpp_sum(values: int[]) -> int {
+    int total = 0;
+    for (int v : values) { total += v; }
+    return total;
+}
+
+call main() -> int {
+    int[] ids = py_ids("py cpp bridge")
+    int out = cpp_sum(ids)
+    inscribe("py->cpp:", out)
+    return 0
+}

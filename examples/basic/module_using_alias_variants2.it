@@ -1,0 +1,11 @@
+adding std.io
+adding std.math.basic
+
+call main() -> int {
+    float[] nums = [1, 2, 3, 4]
+    inscribe("sum:", std.math.basic.sum(nums))
+    inscribe("min:", std.math.basic.min(nums))
+    inscribe("max:", std.math.basic.max(nums))
+    inscribe("sorted:", std.math.basic.sorted(nums))
+    return 0
+}

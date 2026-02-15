@@ -1,0 +1,26 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(0);
+using mermaid.deep(bridge_rules);
+
+adding <cpp> cpp_repeat(text: string, times: int) -> string {
+    std::string out;
+    for (int i = 0; i < times; ++i) {
+        if (i > 0) out += "-";
+        out += text;
+    }
+    return out;
+}
+
+adding <py> py_upper(text: string) -> string {
+    return text.upper()
+}
+
+call main() -> int {
+    string repeated = cpp_repeat("mermaid", 3)
+    string upper = py_upper(repeated)
+    inscribe("cpp->py:", upper)
+    return 0
+}
+

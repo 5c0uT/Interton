@@ -1,0 +1,24 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+
+adding <py> py_seed(n: int) -> int {
+    return n + 4
+}
+
+adding <c> c_mix(x: int) -> int {
+    return x * 2;
+}
+
+adding <ts> ts_label(x: int) -> string {
+    return "ts:" + x;
+}
+
+call main() -> int {
+    int base = py_seed(3)
+    int mid = c_mix(base)
+    string out = ts_label(mid)
+    inscribe("py->c->ts:", out)
+    return 0
+}

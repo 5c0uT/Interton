@@ -1,0 +1,95 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\quantum\teleportation.it
+
+Дата и время запуска: 2026-02-14 03:12:07.019139
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+=== Quantum Teleportation Protocol ===
+
+Protocol Overview:
+- Transfers quantum state from one qubit to another
+- Uses entanglement and classical communication
+- Does not transmit matter or energy faster than light
+- Fundamental protocol for quantum communication
+
+1. Protocol Setup:
+
+Initial state:
+  Alice's qubit: |0>
+  Bell pair qubits: |0>вЉ—|0>
+
+Preparing state to teleport...
+Alice's qubit prepared in unknown state: О±|0> + ОІ|1>
+
+2. Creating Entangled Bell Pair:
+
+Creating Bell pair between Alice and Bob...
+Bell pair created: (|00> + |11>)/в€љ2
+  Alice holds bell_pair_1
+  Bob holds bell_pair_2
+
+3. Alice's Operations:
+
+Alice performs Bell measurement...
+  Applied CNOT(Alice_qubit в†’ Bell_1)
+  Applied H to Alice_qubit
+  Measuring Alice's qubits...
+  Alice's measurement results:
+    Qubit 1 (original): 0
+    Qubit 2 (Bell pair): 0
+
+4. Classical Communication:
+
+Alice sends classical bits to Bob:
+  Bit 1: 0
+  Bit 2: 0
+
+5. Bob's Correction Operations:
+
+Bob receives classical bits and applies corrections...
+Correction operations completed!
+
+6. Verification:
+
+Teleportation complete!
+Bob's qubit should now be in the original state О±|0> + ОІ|1>
+
+Verification measurements:
+Performing 1000 verification measurements...
+Measurement statistics:
+  |0> probability: 0
+  |1> probability: 0
+
+7. Advanced: Entanglement Swapping:
+
+Entanglement Swapping Demonstration:
+Creating two independent Bell pairs...
+Bell pairs created:
+  Pair 1: (|00> + |11>)/в€љ2
+  Pair 2: (|00> + |11>)/в€љ2
+
+Performing Bell measurement on middle two qubits...
+Bell measurement result: 00
+
+Qubits 0 and 3 are now entangled!
+Entanglement created between particles that never directly interacted
+
+8. Quantum Teleportation Applications:
+
+вЂў Quantum communication networks
+вЂў Quantum internet
+вЂў Distributed quantum computing
+вЂў Quantum repeaters
+вЂў Secure quantum communication
+вЂў Quantum error correction
+
+Protocol Summary:
+Quantum state transferred
+No-cloning theorem respected
+Entanglement utilized
+Classical communication required
+Original state destroyed (no cloning)
+

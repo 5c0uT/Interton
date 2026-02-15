@@ -1,0 +1,15 @@
+adding std.io
+adding std.math.advanced
+
+call main() -> int {
+    float deriv = std.math.advanced.derivative("sin", 1.0)
+    float area = std.math.advanced.integral("cos", 0.0, 1.5707963)
+    float lim = std.math.advanced.limit("sin", 0.0)
+    float[] series = std.math.advanced.taylor_series("exp", 6)
+
+    inscribe("derivative sin at 1:", deriv)
+    inscribe("integral cos 0..pi/2:", area)
+    inscribe("limit sin at 0:", lim)
+    inscribe("taylor exp order 6:", series)
+    return 0
+}

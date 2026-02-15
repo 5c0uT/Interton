@@ -1,0 +1,19 @@
+adding std.io
+
+call main() -> int {
+    string name = "Interton"
+    int year = 2026
+    float pi = 3.14159
+    string msg = f"Hello, {name}! Year: {year}"
+    string raw = r"C:\\path\\to\\file.txt"
+    string multi = f"""Multi-line example:
+Line A
+Line B {year}
+"""
+
+    inscribe(msg)
+    inscribe("pi:", pi.to_string())
+    inscribe("raw path:", raw)
+    inscribe(multi)
+    return 0
+}

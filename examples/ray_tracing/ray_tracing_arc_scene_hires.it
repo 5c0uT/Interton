@@ -1,0 +1,21 @@
+adding rendering.ray
+adding std.io
+
+call main() -> int {
+    string scene = rendering.ray.ray_scene(
+        objects=[
+            rendering.ray.plane(normal=[0,1,0], distance=0, material=rendering.ray.diffuse(color=[0.16, 0.16, 0.18])),
+            rendering.ray.sphere(center=[-3, 1, -1], radius=1.0, material=rendering.ray.diffuse(color=[0.8, 0.3, 0.3])),
+            rendering.ray.sphere(center=[-1.5, 1, -2], radius=1.0, material=rendering.ray.diffuse(color=[0.3, 0.8, 0.4])),
+            rendering.ray.sphere(center=[0, 1, -3], radius=1.0, material=rendering.ray.diffuse(color=[0.3, 0.5, 0.9])),
+            rendering.ray.sphere(center=[1.5, 1, -4], radius=1.0, material=rendering.ray.diffuse(color=[0.9, 0.6, 0.2])),
+            rendering.ray.sphere(center=[3, 1, -5], radius=1.0, material=rendering.ray.diffuse(color=[0.7, 0.7, 0.9]))
+        ],
+        lights=[rendering.ray.point_light(position=[0, 6, 4], intensity=1.1)],
+        camera_settings=rendering.ray.camera(origin=[0, 2.4, 7], look_at=[0, 1, -3], fov=48.0, resolution=[1040,680])
+    )
+    string output = rendering.ray.render(scene, scene.camera_settings, samples=4)
+    rendering.ray.write_image(output, "ray_arc_scene_hires.png")
+    inscribe("ray_arc_scene_hires done")
+    return 0
+}

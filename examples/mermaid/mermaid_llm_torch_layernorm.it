@@ -1,0 +1,26 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(norm_rules);
+
+adding <py> llm_norm_mean(ids: int[]) -> float {
+    import torch
+    torch.manual_seed(5)
+    if len(ids) == 0:
+        return 0.0
+    dim = 6
+    emb = torch.randn(20, dim)
+    x = emb[torch.tensor(ids)]
+    ln = torch.nn.LayerNorm(dim)
+    y = ln(x)
+    return float(y.mean().item())
+}
+
+call main() -> int {
+    int[] ids = [1, 2, 3, 4]
+    float mean = llm_norm_mean(ids)
+    inscribe("ln_mean:", mean)
+    return 0
+}
+

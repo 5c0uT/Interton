@@ -1,0 +1,24 @@
+%%tunnel config%%{
+similarity_threshold: 0.95
+max_cache_size: 512
+delta: 0.01
+enabled: true
+}
+
+%%tunnel config%%
+call expensive_compute(a: float, b: float) -> float {
+    float base = (a * b) / (a + b + refocus(1.0) * 0.1)
+    return base
+}
+
+<toned up>
+call flavor(alpha: float) -> string {
+    return f"Tuned flavour {alpha + 0.5}"
+}
+
+call main() -> int {
+    float value = expensive_compute(3.14, 2.72)
+    inscribe("Cached result:", value)
+    inscribe("Flavored:", flavor(0.7))
+    return 0
+}

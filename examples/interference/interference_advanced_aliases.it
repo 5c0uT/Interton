@@ -1,0 +1,11 @@
+adding std.io
+adding interference.advanced
+using interference.advanced;
+
+call main() -> int {
+    string stationary = stationary_interference(1.0, 0.5, [1.0, 0.0000005, 0.0005])
+    inscribe("advanced stationary:", stationary.fringe_spacing)
+    string beats = sound_beats(440.0, 442.0, 1.0, 1.0)
+    inscribe("advanced beats:", beats.beat_frequency)
+    return 0
+}

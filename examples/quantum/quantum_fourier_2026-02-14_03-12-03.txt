@@ -1,0 +1,124 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\quantum\quantum_fourier.it
+
+Дата и время запуска: 2026-02-14 03:12:03.449792
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+=== Quantum Fourier Transform (QFT) ===
+
+Algorithm Overview:
+- Quantum version of discrete Fourier transform
+- Exponentially faster than classical FFT for some applications
+- Key component in Shor's algorithm and quantum phase estimation
+
+1. Basic QFT Demonstration:
+
+Initial state: |010> (decimal 2)
+Initial state probabilities:
+  |0>: 0.0
+  |1>: 0.0
+  |2>: 1.0
+  |3>: 0.0
+  |4>: 0.0
+  |5>: 0.0
+  |6>: 0.0
+  |7>: 0.0
+
+Applying Quantum Fourier Transform...
+
+Applying QFT to 3-qubit register
+Processing qubit 0
+  Applied H to qubit 0
+  Applying CRz(1.5708) to qubits 0,1
+  Applying CRz(0.785398) to qubits 0,2
+Processing qubit 1
+  Applied H to qubit 1
+  Applying CRz(1.5708) to qubits 1,2
+Processing qubit 2
+  Applied H to qubit 2
+Reversing qubit order
+
+QFT applied successfully!
+Transformed state is a superposition of frequency components
+
+2. Inverse QFT Demonstration:
+
+Applying inverse QFT to 3-qubit register
+Processing qubit 2
+  Applied H to qubit 2
+Processing qubit 1
+  Applying CRz(-1.5708) to qubits 1,2
+  Applied H to qubit 1
+Processing qubit 0
+  Applying CRz(-0.785398) to qubits 0,2
+  Applying CRz(-1.5708) to qubits 0,1
+  Applied H to qubit 0
+
+Inverse QFT applied!
+State should be back to original |010>
+
+Measurement results:
+  Qubit 0: 0
+  Qubit 1: 0
+  Qubit 2: 0
+Final measured state: |0>
+
+3. Phase Estimation Example:
+
+Quantum Phase Estimation
+Precision qubits: 3
+Applying controlled-U^1
+Applying controlled-U^2
+Applying controlled-U^4
+Applying inverse QFT to 3-qubit register
+Processing qubit 2
+  Applied H to qubit 2
+Processing qubit 1
+  Applying CRz(-1.5708) to qubits 1,2
+  Applied H to qubit 1
+Processing qubit 0
+  Applying CRz(-0.785398) to qubits 0,2
+  Applying CRz(-1.5708) to qubits 0,1
+  Applied H to qubit 0
+Estimated phase: 0
+
+4. Period Finding Demonstration:
+
+Quantum Period Finding
+Applying function in superposition...
+Applying QFT to 4-qubit register
+Processing qubit 0
+  Applied H to qubit 0
+  Applying CRz(1.5708) to qubits 0,1
+  Applying CRz(0.785398) to qubits 0,2
+  Applying CRz(0.392699) to qubits 0,3
+Processing qubit 1
+  Applied H to qubit 1
+  Applying CRz(1.5708) to qubits 1,2
+  Applying CRz(0.785398) to qubits 1,3
+Processing qubit 2
+  Applied H to qubit 2
+  Applying CRz(1.5708) to qubits 2,3
+Processing qubit 3
+  Applied H to qubit 3
+Reversing qubit order
+Measurement result: 0
+Found period: 4
+
+5. QFT Applications Summary:
+
+вЂў Shor's algorithm (integer factorization)
+вЂў Quantum phase estimation
+вЂў Signal processing
+вЂў Solving linear systems
+вЂў Quantum machine learning
+вЂў Computational chemistry
+
+Performance Comparison:
+  Classical FFT: O(N log N) for N data points
+  Quantum QFT: O((log N)ВІ) for N-dimensional space
+  Exponential speedup for certain problems
+

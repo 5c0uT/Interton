@@ -1,0 +1,11 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\ray_tracing\ray_tracing_reflect_variants2.it
+
+Дата и время запуска: 2026-02-14 03:12:25.093973
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+ray_reflect_variant done
+

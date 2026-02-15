@@ -1,0 +1,207 @@
+// D:\j\j\Interton\examples\interference\wave_simulation.it
+adding std.io
+adding std.math
+adding interf.math
+adding interf.wave
+
+call main() -> int {
+    inscribe("=== Wave Interference Simulation ===")
+    inscribe("")
+    
+    // Create wave sources
+    interf_f wave1 = 0.0  // First wave
+    interf_f wave2 = 0.0  // Second wave
+    interf_f combined = 0.0  // Combined interference pattern
+    
+    inscribe("1. Generating Wave Sources:")
+    inscribe("")
+    
+    // Parameters for wave generation
+    float amplitude1 = 2.0
+    float frequency1 = 1.0
+    float phase1 = 0.0
+    
+    float amplitude2 = 1.5
+    float frequency2 = 1.2  // Slightly different frequency
+    float phase2 = 0.5      // Phase shift
+    
+    int samples = 200
+    float time_step = 0.1
+    
+    inscribe("Wave Parameters:")
+    inscribe("  Wave 1: Amplitude=" + amplitude1.to_string() + ", Frequency=" + frequency1.to_string())
+    inscribe("  Wave 2: Amplitude=" + amplitude2.to_string() + ", Frequency=" + frequency2.to_string() + ", Phase=" + phase2.to_string())
+    inscribe("  Samples: " + samples.to_string() + ", Time Step: " + time_step.to_string())
+    
+    // Generate waves
+    inscribe("")
+    inscribe("Generating wave data...")
+    
+    for int i = 0; i < samples; i = i + 1 {
+        float t = float(i) * time_step
+        
+        // Wave 1: Simple sine wave
+        float y1 = amplitude1 * std.math.sin(2.0 * std.math.pi * frequency1 * t + phase1)
+        
+        // Wave 2: Sine wave with different parameters
+        float y2 = amplitude2 * std.math.sin(2.0 * std.math.pi * frequency2 * t + phase2)
+        
+        // Combined interference
+        float y_combined = y1 + y2
+        
+        wave1 = y1
+        wave2 = y2
+        combined = y_combined
+    }
+    
+    inscribe("Wave generation complete!")
+    inscribe("")
+    
+    inscribe("2. Wave Analysis:")
+    inscribe("")
+    
+    // Analyze individual waves
+    float avg1 = interf.math.mean(wave1)
+    float avg2 = interf.math.mean(wave2)
+    float max1 = interf.math.max(wave1)
+    float max2 = interf.math.max(wave2)
+    
+    inscribe("Wave 1 Statistics:")
+    inscribe("  Average: " + avg1.to_string())
+    inscribe("  Maximum: " + max1.to_string())
+    inscribe("  Minimum: " + interf.math.min(wave1).to_string())
+    
+    inscribe("Wave 2 Statistics:")
+    inscribe("  Average: " + avg2.to_string())
+    inscribe("  Maximum: " + max2.to_string())
+    inscribe("  Minimum: " + interf.math.min(wave2).to_string())
+    
+    inscribe("")
+    inscribe("3. Interference Pattern Analysis:")
+    inscribe("")
+    
+    // Analyze interference pattern
+    float interference_coherence = interf.wave.coherence(wave1, wave2)
+    float interference_power = interf.wave.interference_power(combined)
+    
+    inscribe("Interference Metrics:")
+    inscribe("  Coherence: " + interference_coherence.to_string())
+    inscribe("  Interference Power: " + interference_power.to_string())
+    
+    // Detect constructive and destructive interference points
+    int constructive_points = interf.wave.count_constructive_interference(combined, 0.5)
+    int destructive_points = interf.wave.count_destructive_interference(combined, 0.5)
+    
+    inscribe("Interference Points:")
+    inscribe("  Constructive: " + constructive_points.to_string())
+    inscribe("  Destructive: " + destructive_points.to_string())
+    inscribe("  Ratio: " + (float(constructive_points) / float(destructive_points)).to_string())
+    
+    inscribe("")
+    inscribe("4. Beat Frequency Analysis:")
+    inscribe("")
+    
+    // Calculate beat frequency from two close frequencies
+    float beat_frequency = std.math.abs(frequency1 - frequency2)
+    float beat_period = 1.0 / beat_frequency
+    
+    inscribe("Beat Frequency Analysis:")
+    inscribe("  Beat Frequency: " + beat_frequency.to_string() + " Hz")
+    inscribe("  Beat Period: " + beat_period.to_string() + " seconds")
+    inscribe("  Expected beats in simulation: " + (float(samples) * time_step / beat_period).to_string())
+    
+    // Detect actual beats in the combined wave
+    int detected_beats = interf.wave.detect_beats(combined, time_step)
+    inscribe("  Detected beats: " + detected_beats.to_string())
+    
+    inscribe("")
+    inscribe("5. Wave Visualization:")
+    inscribe("")
+    
+    // Simple text-based wave visualization
+    call visualize_waves(wave1: interf_f, wave2: interf_f, combined: interf_f, points: int) -> void {
+        inscribe("Wave Visualization (first " + points.to_string() + " points):")
+        inscribe("  Time    Wave1    Wave2    Combined")
+        inscribe("  -----   -----    -----    --------")
+        
+        for int i = 0; i < points and i < |wave1|; i = i + 1 {
+            string time_str = ("     " + i.to_string())[-5..]  // Right-aligned
+            string w1_str = ("       " + wave1[i].to_string())[-7..]  // Format to 7 chars
+            string w2_str = ("       " + wave2[i].to_string())[-7..]
+            string comb_str = ("         " + combined[i].to_string())[-9..]
+            
+            inscribe("  " + time_str + "   " + w1_str + "   " + w2_str + "   " + comb_str)
+        }
+    }
+    
+    visualize_waves(wave1, wave2, combined, 15)
+    
+    inscribe("")
+    inscribe("6. Advanced Wave Operations:")
+    inscribe("")
+    
+    // Apply Fourier transform to analyze frequency content
+    interf_f frequencies = interf.wave.fourier_transform(combined)
+    inscribe("Frequency Domain Analysis:")
+    inscribe("  Dominant frequency: " + interf.wave.dominant_frequency(combined).to_string() + " Hz")
+    inscribe("  Frequency components: " + |frequencies|.to_string())
+    
+    // Wave filtering example
+    interf_f filtered = interf.wave.low_pass_filter(combined, 2.0)
+    inscribe("Filtering Results:")
+    inscribe("  Original RMS: " + interf.math.rms(combined).to_string())
+    inscribe("  Filtered RMS: " + interf.math.rms(filtered).to_string())
+    
+    inscribe("")
+    inscribe("7. Standing Wave Simulation:")
+    inscribe("")
+    
+    // Create standing wave pattern
+    interf_f standing_wave = 0.0
+    float standing_freq = 1.0
+    int nodes = 4
+    
+    for int i = 0; i < 100; i = i + 1 {
+        float x = float(i) * 0.1
+        // Standing wave equation: A * sin(kx) * cos(ωt)
+        float y = 2.0 * std.math.sin(nodes * x) * std.math.cos(2.0 * std.math.pi * standing_freq * x)
+        standing_wave = y
+    }
+    
+    inscribe("Standing Wave Created:")
+    inscribe("  Nodes: " + nodes.to_string())
+    inscribe("  Frequency: " + standing_freq.to_string() + " Hz")
+    inscribe("  Node positions detected: " + interf.wave.count_nodes(standing_wave).to_string())
+    
+    inscribe("")
+    inscribe("8. Wave Interference Types:")
+    inscribe("")
+    
+    // Demonstrate different interference types
+    call demonstrate_interference_type(name: string, wave_a: interf_f, wave_b: interf_f) -> void {
+        interf_f result = interf.wave.interfere(wave_a, wave_b)
+        string pattern_type = interf.wave.classify_interference_pattern(result)
+        
+        inscribe(name + ":")
+        inscribe("  Pattern Type: " + pattern_type)
+        inscribe("  Coherence: " + interf.wave.coherence(wave_a, wave_b).to_string())
+    }
+    
+    // Create different wave combinations
+    interf_f in_phase = 0.0
+    interf_f out_of_phase = 0.0
+    interf_f random_phase = 0.0
+    
+    for int i = 0; i < 50; i = i + 1 {
+        float t = float(i) * 0.1
+        in_phase = std.math.sin(t) + std.math.sin(t)  // Perfectly in phase
+        out_of_phase = std.math.sin(t) + std.math.sin(t + std.math.pi)  // 180° out of phase
+        random_phase = std.math.sin(t) + std.math.sin(t + std.math.random() * 2.0 * std.math.pi)
+    }
+    
+    demonstrate_interference_type("In-Phase Waves", in_phase, in_phase)
+    demonstrate_interference_type("Out-of-Phase Waves", out_of_phase, out_of_phase)
+    demonstrate_interference_type("Random Phase", random_phase, random_phase)
+    
+    return 0
+}

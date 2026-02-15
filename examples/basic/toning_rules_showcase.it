@@ -1,0 +1,42 @@
+adding std.io
+
+<toned up>
+call return_up() -> float {
+    return 10.0
+}
+
+<toned data_down>
+call data_down_example(x: int) -> float {
+    return x
+}
+
+call main() -> int {
+    <toned up>int a = 10
+    <toned down by 0.1>float b = 10.0
+    <toned up by 2>string s = "a"
+
+    int existing = 20
+    <toned down existing>
+
+    <toned group down>
+    {
+        int g1 = 1
+        int g2 = 2
+        inscribe("group:", g1, g2)
+    }
+
+    <toned operation>
+    float op = <toned up>2.0 + <toned down>2.0
+
+    float from_fn = return_up()
+    float data_down = data_down_example(10)
+
+    inscribe("a:", a)
+    inscribe("b:", b)
+    inscribe("s:", s)
+    inscribe("existing:", existing)
+    inscribe("op:", op)
+    inscribe("return_up:", from_fn)
+    inscribe("data_down:", data_down)
+    return 0
+}

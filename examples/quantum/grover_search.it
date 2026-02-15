@@ -1,0 +1,196 @@
+adding std.io
+adding quantum.core
+adding std.math
+
+call main() -> int {
+    inscribe("=== Grover's Quantum Search Algorithm ===")
+    inscribe("")
+    
+    inscribe("Algorithm Overview:")
+    inscribe("- Searches an unsorted database of N items")
+    inscribe("- Finds target item in O(√N) operations")
+    inscribe("- Classical algorithms require O(N) operations")
+    inscribe("")
+    
+    // Problem setup: Search for a specific value in a quantum database
+    int n_qubits = 3  // 2^3 = 8 possible states
+    int database_size = 1 << n_qubits  // 8 items
+    int target_state = 5  // We're searching for state |101> (5 in decimal)
+    
+    inscribe("Search Configuration:")
+    inscribe("  Number of qubits: " + n_qubits.to_string())
+    inscribe("  Database size: " + database_size.to_string())
+    inscribe("  Target state: |" + target_state.to_string() + ">")
+    inscribe("")
+    
+    // Create quantum oracle that marks the target state
+    call grover_oracle(register: quant_i[], target: int) -> quant_i[] {
+        inscribe("Applying Grover oracle for target |" + target.to_string() + ">")
+        
+        // In a real implementation, this would be a proper quantum circuit
+        // that flips the phase of the target state
+        for int i = 0; i < |register|; i = i + 1 {
+            // Simplified: This is where the actual oracle logic would go
+            // For demonstration, we'll use a placeholder
+            register[i] = H(register[i])  // Just for demonstration
+        }
+        
+        return register
+    }
+    
+    // Grover diffusion operator
+    call grover_diffusion(register: quant_i[]) -> quant_i[] {
+        inscribe("Applying Grover diffusion operator")
+        
+        // Apply Hadamard to all qubits
+        for int i = 0; i < |register|; i = i + 1 {
+            register[i] = H(register[i])
+        }
+        
+        // Apply phase flip around zero
+        for int i = 0; i < |register|; i = i + 1 {
+            register[i] = X(register[i])
+        }
+        
+        // Multi-qubit gates are omitted in this simplified demo
+        
+        // Apply X gates again
+        for int i = 0; i < |register|; i = i + 1 {
+            register[i] = X(register[i])
+        }
+        
+        // Apply Hadamard again
+        for int i = 0; i < |register|; i = i + 1 {
+            register[i] = H(register[i])
+        }
+        
+        return register
+    }
+    
+    // Grover's search algorithm
+    call grover_search(oracle: (quant_i[]) -> quant_i[], n_qubits: int) -> int {
+        inscribe("Initializing Grover search...")
+        
+        // Initialize quantum register
+        quant_i[] register = [|0>, |0>, |0>]
+        
+        inscribe("Step 1: Create uniform superposition")
+        // Apply Hadamard to all qubits to create superposition
+        for int i = 0; i < n_qubits; i = i + 1 {
+            register[i] = H(register[i])
+        }
+        
+        // Calculate optimal number of iterations
+        int iterations = int(std.math.pi / 4.0 * std.math.sqrt(float(1 << n_qubits)))
+        inscribe("Optimal iterations: " + iterations.to_string())
+        inscribe("")
+        
+        // Grover iterations
+        for int iter = 0; iter < iterations; iter = iter + 1 {
+            inscribe("Iteration " + (iter + 1).to_string() + "/" + iterations.to_string())
+            
+            // Step 2: Apply oracle
+            register = oracle(register)
+            
+            // Step 3: Apply diffusion operator
+            register = grover_diffusion(register)
+            
+            // Display current probability distribution (simplified)
+            if iter < 3 {  // Only show first few iterations to avoid clutter
+                inscribe("  State amplitudes after iteration " + (iter + 1).to_string())
+                for int state = 0; state < (1 << n_qubits) and state < 8; state = state + 1 {
+                    float prob = 0.1  // Placeholder for actual probability
+                    inscribe("    |" + state.to_string() + ">: " + prob.to_string())
+                }
+            }
+        }
+        
+        inscribe("")
+        inscribe("Final measurement...")
+        
+        // Measure the register
+        int result = 0
+        for int i = 0; i < n_qubits; i = i + 1 {
+            int bit = measure(register[i])
+            result = result | (bit << i)
+            inscribe("Qubit " + i.to_string() + " measured: " + bit.to_string())
+        }
+        
+        return result
+    }
+    
+    inscribe("Starting Grover Search...")
+    inscribe("")
+    
+    // Create oracle for our specific target
+    (quant_i[]) -> quant_i[] target_oracle = (reg) -> grover_oracle(reg, target_state)
+    
+    // Run Grover search
+    int found_state = grover_search(target_oracle, n_qubits)
+    
+    inscribe("")
+    inscribe("=== SEARCH RESULTS ===")
+    inscribe("Target state: |" + target_state.to_string() + ">")
+    inscribe("Found state: |" + found_state.to_string() + ">")
+    
+    if found_state == target_state {
+        inscribe("🎉 SUCCESS: Target state found!")
+    } else {
+        inscribe("❌ Search did not find target state")
+        inscribe("This is expected in this simulation without a real oracle")
+    }
+    
+    inscribe("")
+    inscribe("Algorithm Statistics:")
+    inscribe("  Classical worst-case: " + database_size.to_string() + " checks")
+    inscribe("  Grover's algorithm: " + (int(std.math.pi / 4.0 * std.math.sqrt(float(database_size)))).to_string() + " iterations")
+    inscribe("  Speedup: ~" + (std.math.sqrt(float(database_size))).to_string() + "x")
+    
+    inscribe("")
+    inscribe("Advanced: Multiple Targets Search")
+    
+    // Extended example: Search for multiple targets
+    call multi_target_grover(oracle: (quant_i[]) -> quant_i[], n_qubits: int, target_count: int) -> int[] {
+        inscribe("Multi-target Grover search for " + target_count.to_string() + " targets")
+        
+        // This would implement the modified Grover search for multiple targets
+        // where the number of iterations is adjusted based on target count
+        
+        quant_i[] register = [H(|0>), H(|0>), H(|0>)]
+        
+        // Adjusted iterations for multiple targets
+        int total_states = 1 << n_qubits
+        int iterations = int(std.math.pi / 4.0 * std.math.sqrt(float(total_states) / float(target_count)))
+        
+        inscribe("Multi-target iterations: " + iterations.to_string())
+        
+        for int iter = 0; iter < iterations; iter = iter + 1 {
+            register = oracle(register)
+            register = grover_diffusion(register)
+        }
+        
+        // Multiple measurements to find all targets
+        int[] results = []
+        for int measurement = 0; measurement < target_count * 2; measurement = measurement + 1 {
+            quant_i[] temp = register  // In real implementation, we'd use fresh copies
+            int result = 0
+            for int i = 0; i < n_qubits; i = i + 1 {
+                int bit = measure(temp[i])
+                result = result | (bit << i)
+            }
+            results = results + [result]
+        }
+        
+        return results
+    }
+    
+    inscribe("")
+    inscribe("Quantum Search Applications:")
+    inscribe("  • Database search")
+    inscribe("  • Cryptanalysis")
+    inscribe("  • Optimization problems")
+    inscribe("  • Machine learning")
+    inscribe("  • Pattern matching")
+    
+    return 0
+}

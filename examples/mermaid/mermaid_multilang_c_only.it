@@ -1,0 +1,14 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(0);
+
+adding <c> c_add(a: int, b: int) -> int {
+    return a + b;
+}
+
+call main() -> int {
+    int sum = c_add(4, 6)
+    inscribe("c sum:", sum)
+    return 0
+}

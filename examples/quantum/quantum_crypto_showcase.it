@@ -1,0 +1,17 @@
+adding std.io
+adding crypto.quantum
+
+call main() -> int {
+    string message = "Interton"
+    json key_info = crypto.quantum.generate_quantum_key("memory", 8)
+    int[] key = key_info.key
+    json cipher = crypto.quantum.quantum_encrypt(message, key, "QIE8", 0.1)
+    int[] repr = crypto.quantum.to_quantum_representation(message)
+    string restored = crypto.quantum.from_quantum_representation(repr)
+
+    inscribe("key length:", key_info.length)
+    inscribe("cipher algo:", cipher.algorithm)
+    inscribe("cipher length:", cipher.length)
+    inscribe("roundtrip:", restored)
+    return 0
+}

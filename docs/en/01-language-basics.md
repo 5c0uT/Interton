@@ -1,6 +1,6 @@
 # Interton: language basics
 
-Target version: `Interton beta-v_.6.1`
+Target version: `Interton beta-v_.6.2`
 
 ## 1. Program anatomy
 
@@ -206,4 +206,5 @@ type MaybeString = ok(value) | none();
 ```
 
 Use aliases for stable inter-module contracts.
+
 

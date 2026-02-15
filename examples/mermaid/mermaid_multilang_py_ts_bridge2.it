@@ -1,0 +1,21 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <py> py_values() -> int[] {
+    return [2, 4, 6]
+}
+
+adding <ts> ts_avg(values: int[]) -> float {
+    let total = 0;
+    for (let v of values) { total += v; }
+    return total / values.length;
+}
+
+call main() -> int {
+    int[] values = py_values()
+    float out = ts_avg(values)
+    inscribe("py->ts:", out)
+    return 0
+}

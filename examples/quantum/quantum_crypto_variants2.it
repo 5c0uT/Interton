@@ -1,0 +1,10 @@
+adding std.io
+adding crypto.quantum
+
+call main() -> int {
+    string key = crypto.quantum.generate_quantum_key(8)
+    inscribe("key:", key.key)
+    string enc = crypto.quantum.quantum_encrypt("hello", key.key)
+    inscribe("enc:", enc.ciphertext)
+    return 0
+}

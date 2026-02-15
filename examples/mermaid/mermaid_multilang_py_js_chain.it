@@ -1,0 +1,26 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(chain_rules);
+
+adding <py> py_make_ids(text: string) -> int[] {
+    return [len(t) for t in text.split()]
+}
+
+adding <js> js_expand(ids: int[]) -> string {
+    var out = "";
+    for (var i = 0; i < ids.length; i++) {
+        if (i > 0) out = out + ",";
+        out = out + i + ":" + ids[i];
+    }
+    return out;
+}
+
+call main() -> int {
+    int[] ids = py_make_ids("mermaid chain py js")
+    string out = js_expand(ids)
+    inscribe("py->js chain:", out)
+    return 0
+}
+

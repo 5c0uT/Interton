@@ -1,7 +1,7 @@
 # Interton User Documentation / Пользовательская документация Interton
 
 <p align="center">
-  <img src=".github/assets/Interton.svg" alt="Interton logo" width="560">
+  <img src="../Interton.svg" alt="Interton logo" width="560">
 </p>
 
 [![Repository](https://img.shields.io/badge/GitHub-5c0uT%2FInterton-black?logo=github)](https://github.com/5c0uT/Interton)
@@ -11,7 +11,7 @@
 [![Language](https://img.shields.io/badge/Docs-RU%20%2F%20EN-orange)](#documentation-map--карта-документации)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](../License.md)
 
-Current target version / Целевая версия: `Interton beta-v_.6.1`
+Current target version / Целевая версия: `Interton beta-v_.6.2`
 
 ## EN
 
@@ -21,6 +21,7 @@ Official links:
 
 - Repository: `https://github.com/5c0uT/Interton`
 - Releases: `https://github.com/5c0uT/Interton/releases`
+- CI: `https://github.com/5c0uT/Interton/actions`
 
 ### Release-first installation policy
 
@@ -40,7 +41,7 @@ intertonc --help
 Expected output (sample):
 
 ```text
-Interton compiler beta-v_.6.1
+Interton compiler beta-v_.6.2
 Usage: interton_compiler [options] <file1> [file2 ...]
 ...
 ```
@@ -65,6 +66,12 @@ The installer script performs:
 
 ```bash
 bash scripts/install_interton.sh --yes
+```
+
+One-line remote loader (without cloning repo):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
 ```
 
 The loader automatically:
@@ -98,21 +105,21 @@ Hello, Interton
 
 ### Read docs by topic
 
-- Entry point: `00-Getting-Started.md`
-- Language basics: `en/01-language-basics.md`
-- Operators: `en/02-operators.md`
-- Functions/procedures/lambdas: `en/03-functions-procedures-lambdas.md`
-- Classes/OOP: `en/04-classes-oop.md`
-- Modules/libraries: `en/04-modules-libraries.md`
-- FFI: `en/05-ffi.md`
-- Metadata/toning/tunnel/refocus: `en/06-metadata-toning-tunnel-refocus.md`
-- Quantum/interference/ray stacks: `en/07-quantum-interference-ray.md`
-- CLI run modes: `en/08-cli-run-modes.md`
-- FAQ: `en/09-faq.md`
-- Standard library reference: `en/10-standard-library-reference.md`
-- Mermaid guide: `en/11-mermaid-guide.md`
-- Release checklist: `release-checklist.md`
-- IDE guide status: `09-IDE-Guide.md` (in development)
+- Entry point: `users/getting-started.md`
+- Language basics: `users/en/01-language-basics.md`
+- Operators: `users/en/02-operators.md`
+- Functions/procedures/lambdas: `users/en/03-functions-procedures-lambdas.md`
+- Classes/OOP: `users/en/04-classes-oop.md`
+- Modules/libraries: `users/en/05-modules-libraries.md`
+- FFI: `users/en/06-ffi.md`
+- Metadata/toning/tunnel/refocus: `users/en/07-metadata-toning-tunnel-refocus.md`
+- Quantum/interference/ray stacks: `users/en/08-quantum-interference-ray.md`
+- CLI run modes: `users/en/09-cli-run-modes.md`
+- FAQ: `users/en/10-faq.md`
+- Standard library reference: `users/en/11-standard-library-reference.md`
+- Mermaid guide: `users/en/12-mermaid-guide.md`
+- Release checklist: `users/release-checklist.md`
+- IDE guide status: `users/ide-guide.md` (in development)
 
 ## RU
 
@@ -142,7 +149,7 @@ intertonc --help
 Ожидаемый вывод (пример):
 
 ```text
-Interton compiler beta-v_.6.1
+Interton compiler beta-v_.6.2
 Usage: interton_compiler [options] <file1> [file2 ...]
 ...
 ```
@@ -167,6 +174,12 @@ pwsh scripts/install_interton.ps1
 
 ```bash
 bash scripts/install_interton.sh --yes
+```
+
+Однострочный загрузчик без клонирования репозитория:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
 ```
 
 Что делает загрузчик:
@@ -200,57 +213,57 @@ intertonc --run hello_world.it
 
 ### Чтение документации по темам
 
-- Точка входа: `00-Getting-Started.md`
-- Базовый синтаксис: `ru/01-language-basics.md`
-- Операторы: `ru/02-operators.md`
-- Функции/процедуры/лямбды: `ru/03-functions-procedures-lambdas.md`
-- Классы/OOP: `ru/04-classes-oop.md`
-- Модули/библиотеки: `ru/04-modules-libraries.md`
-- FFI: `ru/05-ffi.md`
-- Metadata/toning/tunnel/refocus: `ru/06-metadata-toning-tunnel-refocus.md`
-- Quantum/interference/ray стеки: `ru/07-quantum-interference-ray.md`
-- Режимы CLI: `ru/08-cli-run-modes.md`
-- FAQ: `ru/09-faq.md`
-- Справочник stdlib и built-ins: `ru/10-standard-library-reference.md`
-- Mermaid-гайд: `ru/11-mermaid-guide.md`
-- Релизный чеклист: `release-checklist.md`
-- Статус IDE-гида: `09-IDE-Guide.md` (в разработке)
+- Точка входа: `users/getting-started.md`
+- Базовый синтаксис: `users/ru/01-language-basics.md`
+- Операторы: `users/ru/02-operators.md`
+- Функции/процедуры/лямбды: `users/ru/03-functions-procedures-lambdas.md`
+- Классы/OOP: `users/ru/04-classes-oop.md`
+- Модули/библиотеки: `users/ru/05-modules-libraries.md`
+- FFI: `users/ru/06-ffi.md`
+- Metadata/toning/tunnel/refocus: `users/ru/07-metadata-toning-tunnel-refocus.md`
+- Quantum/interference/ray стеки: `users/ru/08-quantum-interference-ray.md`
+- Режимы CLI: `users/ru/09-cli-run-modes.md`
+- FAQ: `users/ru/10-faq.md`
+- Справочник stdlib и built-ins: `users/ru/11-standard-library-reference.md`
+- Mermaid-гайд: `users/ru/12-mermaid-guide.md`
+- Релизный чеклист: `users/release-checklist.md`
+- Статус IDE-гида: `users/ide-guide.md` (в разработке)
 
 ## Documentation Map / Карта документации
 
 ### Russian (`docs/users/ru`)
 
-1. `ru/00-quick-start.md` - установка, проверка, smoke, обновление.
-2. `ru/01-language-basics.md` - синтаксис, типы, коллекции, control flow.
-3. `ru/02-operators.md` - арифметика, сравнения, присваивание, срезы.
-4. `ru/03-functions-procedures-lambdas.md` - функции и композиция логики.
-5. `ru/04-classes-oop.md` - классы, методы, работа с состоянием.
-6. `ru/04-modules-libraries.md` - импорт, alias, std-модули.
-7. `ru/05-ffi.md` - интеграция с внешними языками.
-8. `ru/06-metadata-toning-tunnel-refocus.md` - продвинутые механики языка.
-9. `ru/07-quantum-interference-ray.md` - доменные стеки.
-10. `ru/08-cli-run-modes.md` - режимы запуска и сборки.
-11. `ru/09-faq.md` - диагностика и рабочие ответы.
-12. `ru/10-standard-library-reference.md` - справочник встроенных функций и stdlib.
-13. `ru/11-mermaid-guide.md` - параметры Mermaid и runtime-статусы.
-14. `release-checklist.md` - что именно публиковать в релиз по платформам.
+1. `users/ru/00-quick-start.md` - установка, проверка, smoke, обновление.
+2. `users/ru/01-language-basics.md` - синтаксис, типы, коллекции, control flow.
+3. `users/ru/02-operators.md` - арифметика, сравнения, присваивание, срезы.
+4. `users/ru/03-functions-procedures-lambdas.md` - функции и композиция логики.
+5. `users/ru/04-classes-oop.md` - классы, методы, работа с состоянием.
+6. `users/ru/05-modules-libraries.md` - импорт, alias, std-модули.
+7. `users/ru/06-ffi.md` - интеграция с внешними языками.
+8. `users/ru/07-metadata-toning-tunnel-refocus.md` - продвинутые механики языка.
+9. `users/ru/08-quantum-interference-ray.md` - доменные стеки.
+10. `users/ru/09-cli-run-modes.md` - режимы запуска и сборки.
+11. `users/ru/10-faq.md` - диагностика и рабочие ответы.
+12. `users/ru/11-standard-library-reference.md` - справочник встроенных функций и stdlib.
+13. `users/ru/12-mermaid-guide.md` - параметры Mermaid и runtime-статусы.
+14. `users/release-checklist.md` - что именно публиковать в релиз по платформам.
 
 ### English (`docs/users/en`)
 
-1. `en/00-quick-start.md` - install and first run.
-2. `en/01-language-basics.md` - language core.
-3. `en/02-operators.md` - expression and operator guide.
-4. `en/03-functions-procedures-lambdas.md` - callable design.
-5. `en/04-classes-oop.md` - class model and usage.
-6. `en/04-modules-libraries.md` - imports and standard modules.
-7. `en/05-ffi.md` - foreign integrations.
-8. `en/06-metadata-toning-tunnel-refocus.md` - advanced runtime surface.
-9. `en/07-quantum-interference-ray.md` - domain stacks.
-10. `en/08-cli-run-modes.md` - CLI command matrix.
-11. `en/09-faq.md` - troubleshooting.
-12. `en/10-standard-library-reference.md` - built-ins and stdlib reference.
-13. `en/11-mermaid-guide.md` - Mermaid runtime parameters and diagnostics.
-14. `release-checklist.md` - exact cross-platform release upload checklist.
+1. `users/en/00-quick-start.md` - install and first run.
+2. `users/en/01-language-basics.md` - language core.
+3. `users/en/02-operators.md` - expression and operator guide.
+4. `users/en/03-functions-procedures-lambdas.md` - callable design.
+5. `users/en/04-classes-oop.md` - class model and usage.
+6. `users/en/05-modules-libraries.md` - imports and standard modules.
+7. `users/en/06-ffi.md` - foreign integrations.
+8. `users/en/07-metadata-toning-tunnel-refocus.md` - advanced runtime surface.
+9. `users/en/08-quantum-interference-ray.md` - domain stacks.
+10. `users/en/09-cli-run-modes.md` - CLI command matrix.
+11. `users/en/10-faq.md` - troubleshooting.
+12. `users/en/11-standard-library-reference.md` - built-ins and stdlib reference.
+13. `users/en/12-mermaid-guide.md` - Mermaid runtime parameters and diagnostics.
+14. `users/release-checklist.md` - exact cross-platform release upload checklist.
 
 ## Scope
 

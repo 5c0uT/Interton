@@ -1,6 +1,6 @@
 # Interton: functions, procedures, lambdas
 
-Target version: `Interton beta-v_.6.1`
+Target version: `Interton beta-v_.6.2`
 
 ## 1. Why Interton has three callable styles
 
@@ -197,3 +197,4 @@ Fix: add short Input/Output section near API docs.
 2. Side effects isolated in `procedure`.
 3. Public `call` names are domain-readable.
 4. Every example has expected output.
+

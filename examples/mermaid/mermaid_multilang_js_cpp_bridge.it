@@ -1,0 +1,28 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(bridge_rules);
+
+adding <js> js_scale(data: int[]) -> int[] {
+    var out = [];
+    for (var i = 0; i < data.length; i++) {
+        out.push(data[i] * 3);
+    }
+    return out;
+}
+
+adding <cpp> cpp_sum(data: int[]) -> int {
+    int sum = 0;
+    for (int v : data) sum += v;
+    return sum;
+}
+
+call main() -> int {
+    int[] base = [1, 2, 3]
+    int[] scaled = js_scale(base)
+    int total = cpp_sum(scaled)
+    inscribe("js->cpp sum:", total)
+    return 0
+}
+

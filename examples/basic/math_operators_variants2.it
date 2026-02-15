@@ -1,0 +1,18 @@
+adding std.io
+
+call main() -> int {
+    int pow = 2 ** 5
+    int mod = 29 %% 6
+    int idiv = 17 // 3
+    bool eq = 5 === 5
+    bool ne = 5 !== 7
+    bool ltgt = 3 <> 4
+    bool gtlt = 4 >< 3
+
+    inscribe("pow:", pow)
+    inscribe("mod:", mod)
+    inscribe("idiv:", idiv)
+    inscribe("eq:", eq, "ne:", ne)
+    inscribe("ltgt:", ltgt, "gtlt:", gtlt)
+    return 0
+}

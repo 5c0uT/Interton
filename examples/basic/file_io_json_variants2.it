@@ -1,0 +1,17 @@
+adding std.io
+
+call main() -> int {
+    string path = "tmp_variants.txt"
+    string jpath = "tmp_variants.json"
+
+    write_file(path, "line1\n")
+    append_file(path, "line2\n")
+    string content = read_file(path)
+    inscribe("content:", content)
+
+    string json_text = "{\"name\":\"interton\",\"version\":0.5,\"ok\":true}"
+    write_file(jpath, json_text)
+    string loaded = read_json(jpath)
+    inscribe("json:", loaded)
+    return 0
+}

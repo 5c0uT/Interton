@@ -1,6 +1,6 @@
 # Interton: classes and OOP
 
-Target version: `Interton beta-v_.6.1`
+Target version: `Interton beta-v_.6.2`
 
 ## 1. When to use a class
 
@@ -179,3 +179,4 @@ Fix: set clear defaults via `init`.
 2. State transitions are predictable.
 3. Example is reproducible.
 4. Output expectations are documented.
+

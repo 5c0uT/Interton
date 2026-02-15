@@ -1,0 +1,238 @@
+adding std.io
+adding quantum.core
+adding std.math
+
+call main() -> int {
+    inscribe("=== Quantum Fourier Transform (QFT) ===")
+    inscribe("")
+    
+    inscribe("Algorithm Overview:")
+    inscribe("- Quantum version of discrete Fourier transform")
+    inscribe("- Exponentially faster than classical FFT for some applications")
+    inscribe("- Key component in Shor's algorithm and quantum phase estimation")
+    inscribe("")
+    
+    // Quantum Fourier Transform implementation
+    call quantum_fourier_transform(register: quant_i[]) -> quant_i[] {
+        int n = |register|
+        inscribe("Applying QFT to " + n.to_string() + "-qubit register")
+        
+        for int i = 0; i < n; i = i + 1 {
+            inscribe("Processing qubit " + i.to_string())
+            
+            // Apply Hadamard to current qubit
+            register[i] = H(register[i])
+            inscribe("  Applied H to qubit " + i.to_string())
+            
+            // Apply controlled rotations
+            for int j = i + 1; j < n; j = j + 1 {
+                float angle = 2.0 * std.math.pi / float(1 << (j - i + 1))
+                inscribe("  Applying CRz(" + angle.to_string() + ") to qubits " + i.to_string() + "," + j.to_string())
+            }
+        }
+        
+        // Reverse the order of qubits (important for QFT)
+        inscribe("Reversing qubit order")
+        for int i = 0; i < n / 2; i = i + 1 {
+            quant_i temp = register[i]
+            register[i] = register[n - 1 - i]
+            register[n - 1 - i] = temp
+        }
+        
+        return register
+    }
+    
+    // Inverse Quantum Fourier Transform
+    call inverse_quantum_fourier_transform(register: quant_i[]) -> quant_i[] {
+        int n = |register|
+        inscribe("Applying inverse QFT to " + n.to_string() + "-qubit register")
+        
+        // Reverse the order first
+        for int i = 0; i < n / 2; i = i + 1 {
+            quant_i temp = register[i]
+            register[i] = register[n - 1 - i]
+            register[n - 1 - i] = temp
+        }
+        
+        for int i = n - 1; i >= 0; i = i - 1 {
+            inscribe("Processing qubit " + i.to_string())
+            
+            // Apply controlled rotations (inverse)
+            for int j = n - 1; j > i; j = j - 1 {
+                float angle = -2.0 * std.math.pi / float(1 << (j - i + 1))
+                inscribe("  Applying CRz(" + angle.to_string() + ") to qubits " + i.to_string() + "," + j.to_string())
+            }
+            
+            // Apply Hadamard
+            register[i] = H(register[i])
+            inscribe("  Applied H to qubit " + i.to_string())
+        }
+        
+        return register
+    }
+    
+    inscribe("1. Basic QFT Demonstration:")
+    inscribe("")
+    
+    // Test with 3-qubit system
+    int n_qubits = 3
+    quant_i[] input_register = [|0>, |0>, |0>]
+    
+    // Initialize with a specific state |010> = 2
+    inscribe("Initial state: |010> (decimal 2)")
+    input_register[0] = |0>
+    input_register[1] = |1>
+    input_register[2] = |0>
+    
+    // Display initial state probabilities
+    inscribe("Initial state probabilities:")
+    for int i = 0; i < (1 << n_qubits); i = i + 1 {
+        inscribe("  |" + i.to_string() + ">: " + (i == 2 ? "1.0" : "0.0"))
+    }
+    
+    inscribe("")
+    inscribe("Applying Quantum Fourier Transform...")
+    inscribe("")
+    
+    // Apply QFT
+    quant_i[] transformed = quantum_fourier_transform(input_register)
+    
+    inscribe("")
+    inscribe("QFT applied successfully!")
+    inscribe("Transformed state is a superposition of frequency components")
+    
+    inscribe("")
+    inscribe("2. Inverse QFT Demonstration:")
+    inscribe("")
+    
+    // Apply inverse QFT to get back to original state
+    quant_i[] recovered = inverse_quantum_fourier_transform(transformed)
+    
+    inscribe("")
+    inscribe("Inverse QFT applied!")
+    inscribe("State should be back to original |010>")
+    
+    // Measure to verify
+    inscribe("")
+    inscribe("Measurement results:")
+    int result = 0
+    for int i = 0; i < n_qubits; i = i + 1 {
+        int bit = measure(recovered[i])
+        result = result | (bit << i)
+        inscribe("  Qubit " + i.to_string() + ": " + bit.to_string())
+    }
+    
+    inscribe("Final measured state: |" + result.to_string() + ">")
+    if result == 2 {
+        inscribe("✅ Success: Original state recovered!")
+    }
+    
+    inscribe("")
+    inscribe("3. Phase Estimation Example:")
+    inscribe("")
+    
+    // Quantum Phase Estimation using QFT
+    call quantum_phase_estimation(unitary: (quant_i) -> quant_i, precision_qubits: int) -> float {
+        inscribe("Quantum Phase Estimation")
+        inscribe("Precision qubits: " + precision_qubits.to_string())
+        
+        // Create registers
+        quant_i[] precision_register = [|0>, |0>, |0>]
+        quant_i eigenstate = |0>  // Simplified eigenstate
+        
+        // Initialize precision register in superposition
+        for int i = 0; i < precision_qubits; i = i + 1 {
+            precision_register[i] = H(|0>)
+        }
+        
+        // Apply controlled unitaries
+        for int i = 0; i < precision_qubits; i = i + 1 {
+            int power = 1 << i
+            inscribe("Applying controlled-U^" + power.to_string())
+            for int j = 0; j < power; j = j + 1 {
+                // In real implementation, this would apply the actual unitary
+                precision_register[i] = unitary(precision_register[i])
+            }
+        }
+        
+        // Apply inverse QFT to precision register
+        precision_register = inverse_quantum_fourier_transform(precision_register)
+        
+        // Measure to get phase estimate
+        int phase_binary = 0
+        for int i = 0; i < precision_qubits; i = i + 1 {
+            int bit = measure(precision_register[i])
+            phase_binary = phase_binary | (bit << i)
+        }
+        
+        float estimated_phase = float(phase_binary) / float(1 << precision_qubits)
+        return estimated_phase
+    }
+    
+    // Example unitary: Z gate (phase flip)
+    (quant_i) -> quant_i z_gate = (q) -> Z(q)
+    
+    float estimated_phase = quantum_phase_estimation(z_gate, 3)
+    inscribe("Estimated phase: " + estimated_phase.to_string())
+    
+    inscribe("")
+    inscribe("4. Period Finding Demonstration:")
+    inscribe("")
+    
+    // Period finding (key component of Shor's algorithm)
+    call find_period(f: (int) -> int, n_qubits: int) -> int {
+        inscribe("Quantum Period Finding")
+        
+        quant_i[] input_register = [|0>, |0>, |0>, |0>]
+        quant_i[] output_register = [|0>, |0>, |0>, |0>]
+        
+        // Create superposition
+        for int i = 0; i < n_qubits; i = i + 1 {
+            input_register[i] = H(|0>)
+        }
+        
+        // Apply function (quantum parallelism)
+        inscribe("Applying function in superposition...")
+        // This is where the modular exponentiation would go for Shor's algorithm
+        
+        // Apply QFT to input register
+        input_register = quantum_fourier_transform(input_register)
+        
+        // Measure to get period information
+        int measurement = 0
+        for int i = 0; i < n_qubits; i = i + 1 {
+            int bit = measure(input_register[i])
+            measurement = measurement | (bit << i)
+        }
+        
+        inscribe("Measurement result: " + measurement.to_string())
+        
+        // In real implementation, we'd use continued fractions to find period
+        int period = 4  // Placeholder
+        return period
+    }
+    
+    // Example function for period finding
+    (int) -> int example_function = (x) -> (x * x) % 15  // For factoring 15
+    
+    int period = find_period(example_function, 4)
+    inscribe("Found period: " + period.to_string())
+    
+    inscribe("")
+    inscribe("5. QFT Applications Summary:")
+    inscribe("")
+    inscribe("• Shor's algorithm (integer factorization)")
+    inscribe("• Quantum phase estimation")
+    inscribe("• Signal processing")
+    inscribe("• Solving linear systems")
+    inscribe("• Quantum machine learning")
+    inscribe("• Computational chemistry")
+    
+    inscribe("")
+    inscribe("Performance Comparison:")
+    inscribe("  Classical FFT: O(N log N) for N data points")
+    inscribe("  Quantum QFT: O((log N)²) for N-dimensional space")
+    inscribe("  Exponential speedup for certain problems")
+    
+    return 0
+}

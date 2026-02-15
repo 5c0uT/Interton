@@ -1,0 +1,27 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(sim_rules);
+
+adding <py> llm_cosine(a: float[], b: float[]) -> float {
+    import torch
+    if len(a) == 0 or len(b) == 0:
+        return 0.0
+    ta = torch.tensor(a, dtype=torch.float32)
+    tb = torch.tensor(b, dtype=torch.float32)
+    if ta.numel() != tb.numel():
+        n = min(ta.numel(), tb.numel())
+        ta = ta[:n]
+        tb = tb[:n]
+    return float(torch.cosine_similarity(ta, tb, dim=0).item())
+}
+
+call main() -> int {
+    float[] a = [0.1, 0.2, 0.3]
+    float[] b = [0.1, 0.0, 0.5]
+    float sim = llm_cosine(a, b)
+    inscribe("cosine:", sim)
+    return 0
+}
+

@@ -1,0 +1,22 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\file_io_suite.it
+
+Дата и время запуска: 2026-02-14 03:10:18.066067
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+file content:
+Line1
+Line2
+Line3
+
+lines count: 3
+line 1: Line1
+json data: [1, 2, 3]
+chunk1: Line1
+chunk2: 
+Line
+eof: false
+

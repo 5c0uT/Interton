@@ -1,0 +1,22 @@
+adding std.io
+adding std.math.basic
+adding std.math.statistics
+adding std.math.linear
+
+call main() -> int {
+    float[] data = [1, 2, 3, 4, 5]
+    inscribe("sum:", std.math.basic.sum(data))
+    inscribe("min:", std.math.basic.min(data))
+    inscribe("max:", std.math.basic.max(data))
+    inscribe("sorted:", std.math.basic.sorted(data))
+    inscribe("mean:", std.math.statistics.mean(data))
+    inscribe("variance:", std.math.statistics.variance(data))
+
+    float[] v1 = [1, 2, 3]
+    float[] v2 = [4, 5, 6]
+    inscribe("dot:", std.math.linear.dot(v1, v2))
+    inscribe("cross:", std.math.linear.cross(v1, v2))
+    inscribe("length:", std.math.linear.length(v1))
+    inscribe("normalize:", std.math.linear.normalize(v1))
+    return 0
+}

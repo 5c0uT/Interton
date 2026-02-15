@@ -1,0 +1,27 @@
+adding std { io, system.files, system.memory, system.threads }
+adding quantum { core, gates }
+
+using std.system.files;
+using std.system.memory;
+using std.system.threads;
+using quantum.core;
+
+call main() -> int {
+    string path = "examples/basic/tmp_system.txt"
+    write_file(path, "system module demo\n")
+    string content = read_file(path)
+    inscribe("std.system.files:", content)
+
+    int mem = used_bytes()
+    int page = page_size()
+    int cores = hardware_concurrency()
+    inscribe("std.system.memory.used_bytes:", mem)
+    inscribe("std.system.memory.page_size:", page)
+    inscribe("std.system.threads.hardware_concurrency:", cores)
+
+    quant_i q = |0>
+    q = H(q)
+    int b = measure(q)
+    inscribe("quantum.core.measure:", b)
+    return 0
+}

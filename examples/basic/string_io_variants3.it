@@ -1,0 +1,15 @@
+adding std.io
+
+call main() -> int {
+    string name = "Interton"
+    int year = 2026
+    string msg = f"{name} year {year}"
+    string path = r"D:\\data\\file.txt"
+    string multi = f"""Line A
+Line B {year}
+"""
+    inscribe(msg)
+    inscribe("path:", path)
+    inscribe(multi)
+    return 0
+}

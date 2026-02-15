@@ -1,0 +1,24 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+
+adding <py> py_seed(n: int) -> int {
+    return n + 2
+}
+
+adding <c> c_mix(x: int) -> int {
+    return x * 4;
+}
+
+adding <cs> cs_finish(x: int) -> int {
+    return x - 3;
+}
+
+call main() -> int {
+    int base = py_seed(5)
+    int mid = c_mix(base)
+    int out = cs_finish(mid)
+    inscribe("py->c->cs:", out)
+    return 0
+}

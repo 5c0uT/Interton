@@ -1,6 +1,6 @@
 # Interton: operators and expressions (detailed)
 
-Target version: `Interton beta-v_.6.1`
+Target version: `Interton beta-v_.6.2`
 
 This section documents operators with behavior aligned to parser/runtime implementation.
 
@@ -51,7 +51,7 @@ a: 4.1
 b: 2.5
 ```
 
-Important runtime nuance in `beta-v_.6.1`:
+Important runtime nuance in `beta-v_.6.2`:
 
 1. in `if (...)` and other logical contexts, `<>`/`><` results are interpreted with truthy/falsy rules,
 2. assigning into `bool` currently keeps the numeric result, which is then interpreted logically when used in conditions.
@@ -274,3 +274,4 @@ Practical rule:
    Pick one convention.
 3. Using `|` as logical OR:
    Logical OR is `||`; `|` is bitwise.
+

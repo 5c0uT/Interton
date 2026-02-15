@@ -1,0 +1,13 @@
+adding std.io
+adding quantum.core
+
+call main() -> int {
+    quant_i[] reg = [|0>, |0>, |0>]
+    inscribe("reg size:", |reg|)
+    reg = H(reg, 0)
+    reg = X(reg, 1)
+    reg = CNOT(reg, 1, 2)
+    int m = measure(reg[0])
+    inscribe("m0:", m)
+    return 0
+}

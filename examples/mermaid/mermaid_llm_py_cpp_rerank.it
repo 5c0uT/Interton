@@ -1,0 +1,28 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(0);
+using mermaid.deep(llm_rerank_rules);
+
+adding <py> llm_token_ids(text: string) -> int[] {
+    import torch
+    tokens = text.split()
+    t = torch.tensor([len(x) for x in tokens], dtype=torch.int32)
+    return t.tolist()
+}
+
+adding <cpp> llm_rerank(ids: int[]) -> int {
+    int score = 0;
+    for (size_t i = 0; i < ids.size(); ++i) {
+        score += static_cast<int>(ids[i] * (static_cast<int>(i) + 1));
+    }
+    return score;
+}
+
+call main() -> int {
+    int[] ids = llm_token_ids("mermaid llm rerank example")
+    int score = llm_rerank(ids)
+    inscribe("rerank_score:", score)
+    return 0
+}
+

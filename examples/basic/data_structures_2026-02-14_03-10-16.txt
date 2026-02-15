@@ -1,0 +1,51 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\data_structures.it
+
+Дата и время запуска: 2026-02-14 03:10:16.887364
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+=== Data Structures in Interton ===
+
+1. Arrays:
+Numbers array: [1, 2, 3, 4, 5]
+Fruits array: [apple, banana, cherry]
+Array length: 5
+
+Array Operations:
+First element: 1
+Last element: 5
+Slice [1:3]: [2, 3, 4]
+After adding elements: [1, 2, 3, 4, 5, 6, 7]
+
+2. Multi-dimensional Arrays:
+2x3 Matrix:
+  [1, 2, 3]
+  [4, 5, 6]
+
+3. Tuples:
+Person tuple: (25, Alice, true)
+Point p1: (3.5, 2.8)
+User: Bob, Age: 30, Active: true
+
+4. Array of Structures:
+  Alice - Age: 25 - Active: true
+  Bob - Age: 30 - Active: false
+  Charlie - Age: 35 - Active: true
+
+5. Stack Implementation:
+After pushes: [10, 20, 30]
+Popped: 30, Stack: [10, 20]
+
+6. Queue Operations:
+Initial queue: [1, 2, 3]
+After enqueue 4: [1, 2, 3, 4]
+Dequeued: 1, Queue: [2, 3, 4]
+
+7. Tree Data Structure:
+Node: 2
+  Node: 1
+  Node: 3
+

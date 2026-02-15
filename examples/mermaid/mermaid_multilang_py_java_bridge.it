@@ -1,0 +1,19 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <py> py_word() -> string {
+    return "mermaid"
+}
+
+adding <j> j_label(text: string, count: int) -> string {
+    return text + ":" + count;
+}
+
+call main() -> int {
+    string word = py_word()
+    string out = j_label(word, 3)
+    inscribe("py->java:", out)
+    return 0
+}

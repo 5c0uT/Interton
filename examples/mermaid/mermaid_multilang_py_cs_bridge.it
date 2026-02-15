@@ -1,0 +1,19 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+
+adding <py> py_title(text: string) -> string {
+    return text.title()
+}
+
+adding <cs> cs_wrap(text: string) -> string {
+    return "[" + text + "]";
+}
+
+call main() -> int {
+    string titled = py_title("mermaid bridge")
+    string out = cs_wrap(titled)
+    inscribe("py->cs:", out)
+    return 0
+}

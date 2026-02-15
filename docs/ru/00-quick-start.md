@@ -1,6 +1,6 @@
 # Interton: быстрый старт
 
-Целевая версия: `Interton beta-v_.6.1`
+Целевая версия: `Interton beta-v_.6.2`
 
 ## 1. Что вы получите после этого гайда
 
@@ -98,7 +98,7 @@ intertonc --help
 Ожидаемый вывод (пример):
 
 ```text
-Interton compiler beta-v_.6.1
+Interton compiler beta-v_.6.2
 Usage: interton_compiler [options] <file1> [file2 ...]
 ```
 
@@ -108,6 +108,12 @@ Usage: interton_compiler [options] <file1> [file2 ...]
 
 ```bash
 bash scripts/install_interton.sh --yes
+```
+
+Однострочный вариант без клонирования репозитория:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
 ```
 
 Загрузчик автоматически:
@@ -197,12 +203,13 @@ Get-FileHash -Algorithm SHA256 .\intertonc.exe
 2. Операторы: `02-operators.md`
 3. Функции: `03-functions-procedures-lambdas.md`
 4. OOP: `04-classes-oop.md`
-5. Модули: `04-modules-libraries.md`
-6. FFI: `05-ffi.md`
-7. Продвинутые механики: `06-metadata-toning-tunnel-refocus.md`
-8. Доменные стеки: `07-quantum-interference-ray.md`
-9. CLI: `08-cli-run-modes.md`
-10. Вопросы/ошибки: `09-faq.md`
-11. Справочник stdlib: `10-standard-library-reference.md`
-12. Mermaid-гайд: `11-mermaid-guide.md`
+5. Модули: `05-modules-libraries.md`
+6. FFI: `06-ffi.md`
+7. Продвинутые механики: `07-metadata-toning-tunnel-refocus.md`
+8. Доменные стеки: `08-quantum-interference-ray.md`
+9. CLI: `09-cli-run-modes.md`
+10. Вопросы/ошибки: `10-faq.md`
+11. Справочник stdlib: `11-standard-library-reference.md`
+12. Mermaid-гайд: `12-mermaid-guide.md`
+
 

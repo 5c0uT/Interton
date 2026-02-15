@@ -1,0 +1,14 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster;
+
+adding <js> js_len(text: string) -> int {
+    return text.length;
+}
+
+call main() -> int {
+    int n = js_len("mermaid js")
+    inscribe("js len:", n)
+    return 0
+}

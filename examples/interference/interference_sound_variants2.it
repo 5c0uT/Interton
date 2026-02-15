@@ -1,0 +1,12 @@
+adding std.io
+adding interference.sound
+
+call main() -> int {
+    string loud = interference.sound.constructive_sound_interference(1.0, 0.6, 0.0)
+    string quiet = interference.sound.destructive_sound_interference(1.0, 0.6, 3.14159)
+    string beats = interference.sound.sound_beats(220.0, 224.0, 1.0, 1.0)
+    inscribe("loud:", loud.amplification_factor)
+    inscribe("quiet:", quiet.attenuation_factor)
+    inscribe("beats:", beats.beat_frequency)
+    return 0
+}

@@ -1,0 +1,16 @@
+adding std.io
+
+call main() -> int {
+    (int, string, bool) item = (7, "seven", true)
+    inscribe("tuple:", item.0, item.1, item.2)
+
+    type Point = (x: float, y: float)
+    Point p = (2.25, 3.75)
+    inscribe("point:", p.x, p.y)
+
+    int[] values = [10, 20, 30, 40, 50]
+    inscribe("range 1..3:", values[1..3].to_string())
+    inscribe("range 0..<|values|-1:", values[0..<|values|-1].to_string())
+    inscribe("last:", values[-1].to_string())
+    return 0
+}

@@ -1,0 +1,30 @@
+// D:\j\j\Interton\examples\basic\foreign_pipeline.it
+// Требует внешних рантаймов:
+//   INTERTON_PY=python
+//   INTERTON_NODE=node
+
+adding std.io
+
+adding <py> make_numbers(n: int) -> int[] {
+    return list(range(1, n + 1))
+}
+
+adding <js> sum_numbers(values: int[]) -> int {
+    let total = 0
+    for (const v of values) {
+        total += v
+    }
+    return total
+}
+
+adding <py> format_report(values: int[], total: int) -> string {
+    return f"values={values} total={total}"
+}
+
+call main() -> int {
+    int[] numbers = make_numbers(6)
+    int total = sum_numbers(numbers)
+    string report = format_report(numbers, total)
+    inscribe("Interton pipeline:", report)
+    return 0
+}

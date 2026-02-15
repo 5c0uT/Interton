@@ -1,0 +1,25 @@
+adding std.io
+
+call main() -> int {
+    int[] ints = [1, 2, 3, 4]
+    float[] floats = [1.5, 2.5, 3.5]
+    bool[] flags = [true, false, true]
+    string[] names = ["alpha", "beta", "gamma"]
+
+    inscribe("ints:", ints.to_string())
+    inscribe("floats:", floats.to_string())
+    inscribe("flags:", flags.to_string())
+    inscribe("names:", names.to_string())
+
+    optional<int> maybe_count = none
+    inscribe("maybe_count:", maybe_count)
+    maybe_count = some(42)
+    inscribe("maybe_count:", maybe_count.value)
+
+    optional<string> maybe_name = some("interton")
+    inscribe("maybe_name:", maybe_name.value)
+
+    int[] extended = ints + [5, 6]
+    inscribe("extended:", extended.to_string())
+    return 0
+}

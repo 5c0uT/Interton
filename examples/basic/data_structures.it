@@ -1,0 +1,138 @@
+adding std.io
+
+call main() -> int {
+    inscribe("=== Data Structures in Interton ===")
+    
+    // Arrays
+    inscribe("")
+    inscribe("1. Arrays:")
+    
+    int[] numbers = [1, 2, 3, 4, 5]
+    string[] fruits = ["apple", "banana", "cherry"]
+    bool[] flags = [true, false, true, true]
+    
+    inscribe("Numbers array: " + numbers.to_string())
+    inscribe("Fruits array: " + fruits.to_string())
+    inscribe("Array length: " + |numbers|.to_string())
+    
+    // Array operations
+    inscribe("")
+    inscribe("Array Operations:")
+    inscribe("First element: " + numbers[0].to_string())
+    inscribe("Last element: " + numbers[-1].to_string())
+    inscribe("Slice [1:3]: " + numbers[1..3].to_string())
+    
+    // Adding elements
+    numbers = numbers + [6, 7]
+    inscribe("After adding elements: " + numbers.to_string())
+    
+    // Multi-dimensional arrays
+    inscribe("")
+    inscribe("2. Multi-dimensional Arrays:")
+    
+    int[2][3] matrix = [[1, 2, 3], [4, 5, 6]]
+    inscribe("2x3 Matrix:")
+    for int i = 0; i < 2; i = i + 1 {
+        string row = ""
+        for int j = 0; j < 3; j = j + 1 {
+            if j > 0 {
+                row = row + ", "
+            }
+            row = row + matrix[i][j].to_string()
+        }
+        inscribe("  [" + row + "]")
+    }
+    
+    // Tuples
+    inscribe("")
+    inscribe("3. Tuples:")
+    
+    (int, string, bool) person = (25, "Alice", true)
+    inscribe("Person tuple: (" + person.0.to_string() + ", " + person.1 + ", " + person.2.to_string() + ")")
+    
+    // Named tuple type
+    type Point = (x: float, y: float)
+    Point p1 = (3.5, 2.8)
+    inscribe("Point p1: (" + p1.x.to_string() + ", " + p1.y.to_string() + ")")
+    
+    // Structures using tuples
+    type Person = (name: string, age: int, active: bool)
+    Person user = ("Bob", 30, true)
+    inscribe("User: " + user.name + ", Age: " + user.age.to_string() + ", Active: " + user.active.to_string())
+    
+    // Array of structures
+    inscribe("")
+    inscribe("4. Array of Structures:")
+    
+    Person[] people = [
+        ("Alice", 25, true),
+        ("Bob", 30, false),
+        ("Charlie", 35, true)
+    ]
+    
+    for int i = 0; i < |people|; i = i + 1 {
+        Person p = people[i]
+        inscribe("  " + p.name + " - Age: " + p.age.to_string() + " - Active: " + p.active.to_string())
+    }
+    
+    // Stack operations using arrays
+    inscribe("")
+    inscribe("5. Stack Implementation:")
+    
+    int[] stack = []
+    
+    // Push operations
+    stack = stack + [10]
+    stack = stack + [20]
+    stack = stack + [30]
+    inscribe("After pushes: " + stack.to_string())
+    
+    // Pop operation
+    int top = stack[-1]
+    stack = stack[0..<|stack|-1]
+    inscribe("Popped: " + top.to_string() + ", Stack: " + stack.to_string())
+    
+    // Queue operations
+    inscribe("")
+    inscribe("6. Queue Operations:")
+    
+    int[] queue = [1, 2, 3]
+    inscribe("Initial queue: " + queue.to_string())
+    
+    // Enqueue
+    queue = queue + [4]
+    inscribe("After enqueue 4: " + queue.to_string())
+    
+    // Dequeue
+    int front = queue[0]
+    queue = queue[1..|queue|]
+    inscribe("Dequeued: " + front.to_string() + ", Queue: " + queue.to_string())
+    
+    // Complex data structure: Binary Tree Node
+    inscribe("")
+    inscribe("7. Tree Data Structure:")
+    
+    type TreeNode = (value: int, left: optional<TreeNode>, right: optional<TreeNode>)
+    
+    // Create a simple tree
+    TreeNode leaf1 = (1, none, none)
+    TreeNode leaf2 = (3, none, none)
+    TreeNode root = (2, some(leaf1), some(leaf2))
+    
+    call print_tree(node: optional<TreeNode>, depth: int) -> void {
+        if node is some {
+            TreeNode n = node.value
+            string indent = ""
+            for int i = 0; i < depth; i = i + 1 {
+                indent = indent + "  "
+            }
+            inscribe(indent + "Node: " + n.value.to_string())
+            print_tree(n.left, depth + 1)
+            print_tree(n.right, depth + 1)
+        }
+    }
+    
+    print_tree(some(root), 0)
+    
+    return 0
+}

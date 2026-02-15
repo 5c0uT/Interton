@@ -1,0 +1,26 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(bridge_rules);
+
+adding <py> py_lengths(text: string) -> int[] {
+    return [len(t) for t in text.split()]
+}
+
+adding <js> js_avg(data: int[]) -> float {
+    if (data.length === 0) return 0.0;
+    var sum = 0;
+    for (var i = 0; i < data.length; i++) {
+        sum += data[i];
+    }
+    return sum / data.length;
+}
+
+call main() -> int {
+    int[] lens = py_lengths("mermaid py ts bridge")
+    float avg = js_avg(lens)
+    inscribe("py->js avg:", avg)
+    return 0
+}
+

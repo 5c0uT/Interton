@@ -1,0 +1,9 @@
+adding std.io
+
+using mermaid.struct;
+
+call main() -> int {
+    string cfg = mermaid_config()
+    inscribe("struct cfg:", cfg)
+    return 0
+}

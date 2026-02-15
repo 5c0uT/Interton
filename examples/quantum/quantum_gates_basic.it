@@ -1,0 +1,22 @@
+adding std.io
+adding quantum.core
+
+call main() -> int {
+    quant_i q0 = |0>
+    quant_i q1 = |1>
+
+    q0 = H(q0)
+    q1 = X(q1)
+    q0 = Rz(q0, 0.25)
+    q0 = Rx(q0, 0.5)
+
+    int m0 = measure(q0)
+    int m1 = measure(q1)
+
+    inscribe("measurements:", m0, m1)
+
+    quant_i[] pair = [q0, q1]
+    pair = CNOT(pair, 0, 1)
+    inscribe("pair size:", |pair|)
+    return 0
+}

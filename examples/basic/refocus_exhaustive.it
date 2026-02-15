@@ -1,0 +1,136 @@
+adding std.io
+
+call main() -> int {
+    int failures = 0
+
+    // Base refocus() range test
+    int base_out = 0
+    for int i = 0; i < 200; i = i + 1 {
+        float v = refocus()
+        if v < 0.0 || v >= 1.0 {
+            failures = failures + 1
+        }
+        if v == 0.0 {
+            base_out = base_out + 1
+        }
+    }
+    inscribe("refocus() sample zeros:", base_out)
+
+    // Int range tests
+    int min_seen = 9999
+    int max_seen = -9999
+    for int i = 0; i < 500; i = i + 1 {
+        int v = refocus(0, 9)
+        if v < 0 || v > 9 {
+            failures = failures + 1
+        }
+        if v < min_seen {
+            min_seen = v
+        }
+        if v > max_seen {
+            max_seen = v
+        }
+    }
+    inscribe("int range 0..9:", min_seen, max_seen)
+
+    // Int named args
+    int named_min = 9999
+    int named_max = -9999
+    for int i = 0; i < 200; i = i + 1 {
+        int v = refocus(0, min = -3, max = 3)
+        if v < -3 || v > 3 {
+            failures = failures + 1
+        }
+        if v < named_min {
+            named_min = v
+        }
+        if v > named_max {
+            named_max = v
+        }
+    }
+    inscribe("int named range -3..3:", named_min, named_max)
+
+    // Negative range tests
+    int neg_min_seen = 9999
+    int neg_max_seen = -9999
+    for int i = 0; i < 300; i = i + 1 {
+        int v = refocus(-5, -1)
+        if v < -5 || v > -1 {
+            failures = failures + 1
+        }
+        if v < neg_min_seen {
+            neg_min_seen = v
+        }
+        if v > neg_max_seen {
+            neg_max_seen = v
+        }
+    }
+    inscribe("int range -5..-1:", neg_min_seen, neg_max_seen)
+
+    // Float range tests
+    float f_min_seen = 1e9
+    float f_max_seen = -1e9
+    for int i = 0; i < 400; i = i + 1 {
+        float v = refocus(1.0, 2.0)
+        if v < 1.0 || v > 2.0 {
+            failures = failures + 1
+        }
+        if v < f_min_seen {
+            f_min_seen = v
+        }
+        if v > f_max_seen {
+            f_max_seen = v
+        }
+    }
+    inscribe("float range 1.0..2.0:", f_min_seen, f_max_seen)
+
+    // Float named args
+    float f_named_min = 1e9
+    float f_named_max = -1e9
+    for int i = 0; i < 200; i = i + 1 {
+        float v = refocus(0.0, min = -1.0, max = 1.0)
+        if v < -1.0 || v > 1.0 {
+            failures = failures + 1
+        }
+        if v < f_named_min {
+            f_named_min = v
+        }
+        if v > f_named_max {
+            f_named_max = v
+        }
+    }
+    inscribe("float named range -1.0..1.0:", f_named_min, f_named_max)
+
+    // Bool + string length
+    bool b = refocus(false)
+    bool b2 = refocus(true)
+    string s = refocus("seed", length = 12)
+    inscribe("bool sample:", b)
+    inscribe("bool sample 2:", b2)
+    inscribe("string length:", s, "|len|", |s|)
+    if |s| != 12 {
+        failures = failures + 1
+    }
+
+    // Optional behavior
+    optional<int> opt_some = some(7)
+    optional<int> opt_rand = refocus(opt_some, min = 5, max = 9)
+    optional<int> opt_none = none
+    optional<int> opt_none_out = refocus(opt_none)
+    inscribe("optional some:", opt_rand)
+    inscribe("optional none:", opt_none_out)
+
+    // Bytes
+    int[] bytes = refocus_bytes(32)
+    if |bytes| != 32 {
+        failures = failures + 1
+    }
+    inscribe("bytes length:", |bytes|)
+
+    if failures > 0 {
+        inscribe("refocus exhaustive: FAIL", failures)
+        return 1
+    }
+    inscribe("refocus exhaustive: OK")
+    return 0
+}

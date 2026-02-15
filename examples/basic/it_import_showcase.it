@@ -1,0 +1,8 @@
+adding std.io
+adding modules.adder
+
+call main() -> int {
+    int sum = add(2, 3)
+    inscribe("sum:", sum)
+    return 0
+}

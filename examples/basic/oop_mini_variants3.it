@@ -1,0 +1,22 @@
+adding std.io
+
+class Counter {
+    int value;
+
+    public call init(start: int) -> void {
+        this.value = start
+    }
+
+    public call inc() -> int {
+        this.value = this.value + 1
+        return this.value
+    }
+}
+
+call main() -> int {
+    Counter c = new Counter(2)
+    inscribe("init:", c.value)
+    inscribe("inc:", c.inc())
+    inscribe("inc:", c.inc())
+    return 0
+}

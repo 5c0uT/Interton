@@ -1,0 +1,19 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(seq_rules);
+
+adding <py> llm_seq_len(text: string) -> int {
+    import torch
+    tokens = text.split()
+    t = torch.tensor([len(x) for x in tokens], dtype=torch.int32)
+    return int(t.numel())
+}
+
+call main() -> int {
+    int n = llm_seq_len("mermaid llm seq length")
+    inscribe("seq_len:", n)
+    return 0
+}
+

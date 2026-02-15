@@ -1,0 +1,13 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\basic\hello_world.it
+
+Дата и время запуска: 2026-02-14 03:10:19.432750
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+Hello, Quantum World! Welcome to Interton Programming Language Version: beta-v_.6.1
+Language: Interton Year: 2025 Version: 0.5 Is Awesome: true
+Hello World!
+

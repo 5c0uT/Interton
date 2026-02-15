@@ -1,0 +1,19 @@
+adding std.io
+
+call main() -> int {
+    int r1 = refocus(10)
+    float r2 = refocus(1.0, min=0.25, max=0.75)
+    bool r3 = refocus(true)
+    string r4 = refocus("seed", length=8)
+
+    optional<int> maybe = some(5)
+    optional<int> maybe2 = refocus(maybe, min=1, max=9)
+
+    inscribe("r1:", r1)
+    inscribe("r2:", r2)
+    inscribe("r3:", r3)
+    inscribe("r4:", r4)
+    inscribe("maybe2:", maybe2.value)
+    inscribe("refocus hits:", refocus(1).stats.hits)
+    return 0
+}

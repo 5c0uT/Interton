@@ -1,0 +1,46 @@
+// D:\j\j\Interton\examples\interference\light_sound_interference.it
+adding std.io
+adding interference.light
+adding interference.sound
+
+call main() -> int {
+    inscribe("=== Light Interference ===")
+    float wavelength = 0.0000005
+    float slit_separation = 0.0005
+    float screen_distance = 1.0
+    float[] setup = [screen_distance, wavelength, slit_separation]
+
+    // Use numeric amplitudes as waves (frequency defaults to 1.0 in run-mode).
+    string stationary =
+        interference.light.stationary_interference(1.0, 0.8, setup)
+    inscribe("Fringe spacing:", stationary.fringe_spacing)
+    inscribe("Maxima:", stationary.maxima)
+    inscribe("Minima:", stationary.minima)
+
+    string young =
+        interference.light.young_experiment(wavelength, slit_separation, screen_distance)
+    inscribe("Young fringe spacing:", young.fringe_spacing)
+
+    string film =
+        interference.light.thin_film_interference(0.000001, 1.33, wavelength, 0.0)
+    inscribe("Thin film color:", film.film_color)
+
+    inscribe("")
+    inscribe("=== Sound Interference ===")
+    string loud =
+        interference.sound.constructive_sound_interference(1.0, 0.8, 0.0)
+    inscribe("Amplification factor:", loud.amplification_factor)
+    inscribe("Perceived loudness:", loud.perceived_loudness)
+
+    string quiet =
+        interference.sound.destructive_sound_interference(1.0, 0.8, 3.14159)
+    inscribe("Attenuation factor:", quiet.attenuation_factor)
+    inscribe("Noise reduction dB:", quiet.noise_reduction_db)
+
+    string beats =
+        interference.sound.sound_beats(440.0, 444.0, 1.0, 1.0)
+    inscribe("Beat frequency:", beats.beat_frequency)
+    inscribe("Perceptual effect:", beats.perceptual_effect)
+
+    return 0
+}

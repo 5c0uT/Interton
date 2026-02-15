@@ -1,0 +1,22 @@
+adding std.io
+
+class PairOps {
+    public call init() -> void {
+        inscribe("PairOps init")
+    }
+
+    public call sum(a: int, b: int) -> int {
+        return a + b
+    }
+
+    public call mul(a: int, b: int) -> int {
+        return a * b
+    }
+}
+
+call main() -> int {
+    PairOps ops = new PairOps()
+    inscribe("sum:", ops.sum(4, 9))
+    inscribe("mul:", ops.mul(3, 7))
+    return 0
+}

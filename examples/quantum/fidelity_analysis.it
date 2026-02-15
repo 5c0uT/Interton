@@ -1,0 +1,15 @@
+adding quantum.core
+adding std.io
+
+call main() -> int {
+    quant_i q1 = |0>
+    quant_i q2 = |1>
+    q1 = H(q1)
+    q2 = X(q2)
+    quant_i entangled = CNOT(q1, q2)
+    int measure1 = measure(entangled)
+    int measure2 = measure(q2)
+    inscribe("Measurements:", measure1, measure2)
+    inscribe("Fidelity estimate:", "not available in run-mode")
+    return 0
+}

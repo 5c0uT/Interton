@@ -1,0 +1,99 @@
+Запуск команды:
+intertonc --run D:\j\j\Interton\examples\interference\wave_simulation.it
+
+Дата и время запуска: 2026-02-14 03:10:39.873559
+
+==================================================
+ВЫВОД ПРОГРАММЫ:
+==================================================
+STDOUT:
+=== Wave Interference Simulation ===
+
+1. Generating Wave Sources:
+
+Wave Parameters:
+  Wave 1: Amplitude=2, Frequency=1
+  Wave 2: Amplitude=1.5, Frequency=1.2, Phase=0.5
+  Samples: 200, Time Step: 0.1
+
+Generating wave data...
+Wave generation complete!
+
+2. Wave Analysis:
+
+Wave 1 Statistics:
+  Average: -2.77835e-16
+  Maximum: 1.90211
+  Minimum: -1.90211
+Wave 2 Statistics:
+  Average: 6.72795e-16
+  Maximum: 1.49678
+  Minimum: -1.49728
+
+3. Interference Pattern Analysis:
+
+Interference Metrics:
+  Coherence: 0.5
+  Interference Power: 3.125
+Interference Points:
+  Constructive: 156
+  Destructive: 44
+  Ratio: 3.54545
+
+4. Beat Frequency Analysis:
+
+Beat Frequency Analysis:
+  Beat Frequency: 0.2 Hz
+  Beat Period: 5 seconds
+  Expected beats in simulation: 4
+  Detected beats: 0
+
+5. Wave Visualization:
+
+Wave Visualization (first 15 points):
+  Time    Wave1    Wave2    Combined
+  -----   -----    -----    --------
+      0   1.17557   .719138    0.719138
+      1   1.90211   1.42535     2.60092
+      2   1.90211   1.35893     3.26104
+      3   1.17557   .555887       2.458
+      4   929e-16   .548482    0.627088
+      5   1.17557   1.35554    -1.35554
+      6   1.90211   1.42781    -2.60338
+      7   1.90211   .726118    -2.62823
+      8   1.17557   .369176    -1.53294
+      9   859e-16   1.26435   0.0887831
+     10   1.17557   1.47417     1.47417
+     11   1.90211   .884896     2.06047
+     12   1.90211   .184048     1.71806
+     13   1.17557   1.15323    0.748886
+     14   788e-16   1.49728   -0.321714
+
+6. Advanced Wave Operations:
+
+Frequency Domain Analysis:
+  Dominant frequency: 1 Hz
+  Frequency components: 200
+Filtering Results:
+  Original RMS: 1.76777
+  Filtered RMS: 1.76777
+
+7. Standing Wave Simulation:
+
+Standing Wave Created:
+  Nodes: 4
+  Frequency: 1 Hz
+  Node positions detected: 26
+
+8. Wave Interference Types:
+
+In-Phase Waves:
+  Pattern Type: constructive
+  Coherence: 0.5
+Out-of-Phase Waves:
+  Pattern Type: constructive
+  Coherence: 0.5
+Random Phase:
+  Pattern Type: constructive
+  Coherence: 0.5
+

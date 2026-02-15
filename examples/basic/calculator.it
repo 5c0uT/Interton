@@ -1,0 +1,69 @@
+adding std.io
+adding std.math
+
+call main() -> int {
+    inscribe("=== Interton Calculator ===")
+    inscribe("Basic Arithmetic and meta-wrapped expressions")
+
+    // Placeholder for interactive prompt; use fixed values for parser compatibility
+    string user_input = ""
+    int a = 15
+    int b = 4
+    float x = 7.5
+    float y = 2.5
+
+    inscribe("Integer Operations:", a, b)
+    inscribe("a + b =", a + b, "a - b =", a - b, "a * b =", a * b, "a / b =", a / b, "a % b =", a % b)
+
+    inscribe("Floating-Point Operations:", x, y)
+    inscribe("x + y =", x + y, "x - y =", x - y, "x * y =", x * y, "x / y =", x / y)
+
+    inscribe("Mathematical Functions:",
+        "sqrt(16) =", std.math.sqrt(16.0),
+        "pow(2,8) =", std.math.pow(2.0, 8.0),
+        "sin(pi/2) =", std.math.sin(std.math.pi / 2.0),
+        "log(100) =", std.math.log(100.0))
+
+    inscribe("Comparison Operations:",
+        "a > b:", a > b,
+        "x == y:", x == y,
+        "a != b:", a != b,
+        "(a > 10) and (b < 5):", (a > 10) and (b < 5))
+
+    inscribe("")
+    inscribe("Helper Functions:")
+    float expression_result = evaluate_expression()
+    inscribe("Result:", expression_result)
+    inscribe("Factorial(6):", factorial(6), "Fibonacci(10):", fibonacci(10))
+    return 0
+}
+
+call evaluate_expression() -> float {
+    return std.math.sqrt(16.0) + std.math.pow(2.0, 3.0)
+}
+
+call factorial(n: int) -> int {
+    int result = 1
+    int i = 2
+    while i <= n {
+        result = result * i
+        i = i + 1
+    }
+    return result
+}
+
+call fibonacci(n: int) -> int {
+    if n <= 1 {
+        return n
+    }
+    int a = 0
+    int b = 1
+    int i = 2
+    while i <= n {
+        int next = a + b
+        a = b
+        b = next
+        i = i + 1
+    }
+    return b
+}

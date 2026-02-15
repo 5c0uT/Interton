@@ -1,0 +1,20 @@
+adding std.io
+
+call main() -> int {
+    inscribe("Hello, Quantum World!", "Welcome to Interton Programming Language", "Version: beta-v_.6.1")
+    
+    // Basic variable demonstrations
+    string language = "Interton"
+    int year = 2025
+    float version = 0.5
+    bool is_awesome = true
+    
+    inscribe("Language:", language, "Year:", year, "Version:", version, "Is Awesome:", is_awesome)
+    
+    // Simple string operations
+    string greeting = "Hello" + " " + "World" + "!"
+    inscribe(greeting)
+    
+    return 0
+}
+

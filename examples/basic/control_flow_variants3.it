@@ -1,0 +1,21 @@
+adding std.io
+
+call main() -> int {
+    int sum = 0
+    for (int i = 0; i < 10; i += 1) {
+        sum = sum + i
+    }
+
+    if (sum > 40) {
+        inscribe("sum:", sum)
+    } else {
+        inscribe("small:", sum)
+    }
+
+    int j = 0
+    while (j < 3) {
+        inscribe("tick", j)
+        j += 1
+    }
+    return 0
+}

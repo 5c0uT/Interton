@@ -1,0 +1,15 @@
+adding std.io
+
+call main() -> int {
+    inscribe("Advanced storage examples")
+    int[] primes = [2, 3, 5, 7, 11]
+    interf_f history = 0.0
+    for int i = 0; i < |primes|; i = i + 1 {
+        history = history + primes[i]
+        inscribe("running sum:", history)
+    }
+    int[] copy = primes
+    int[] extended = [2, 3, 5, 7, 11, 13]
+    inscribe("Extended list:", extended)
+    return 0
+}

@@ -1,0 +1,16 @@
+adding std.io
+adding quantum.core
+
+call main() -> int {
+    quant_i[] reg = [|0>, |0>, |0>]
+    reg[0] = H(reg[0])
+    reg = CNOT(reg, 0, 1)
+    reg = CNOT(reg, 1, 2)
+    reg = CRz(reg, 0, 2, 0.5)
+
+    int m0 = measure(reg[0])
+    int m1 = measure(reg[1])
+    int m2 = measure(reg[2])
+    inscribe("register measurements:", m0, m1, m2)
+    return 0
+}

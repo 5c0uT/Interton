@@ -1,0 +1,11 @@
+adding std.io
+
+call main() -> int {
+    int[] values = [2, 4, 6, 8, 10]
+    inscribe("len:", |values|)
+    inscribe("first:", values[0].to_string())
+    inscribe("slice 1..3:", values[1..3].to_string())
+    values[2] = 7
+    inscribe("updated:", values.to_string())
+    return 0
+}

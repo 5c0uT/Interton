@@ -1,0 +1,12 @@
+adding std.io
+adding std.math.basic
+adding std.math.statistics
+
+call main() -> int {
+    float[] data = [1.5, 2.5, 3.5, 4.5]
+    inscribe("sum:", std.math.basic.sum(data))
+    inscribe("min:", std.math.basic.min(data))
+    inscribe("max:", std.math.basic.max(data))
+    inscribe("mean:", std.math.statistics.mean(data))
+    return 0
+}

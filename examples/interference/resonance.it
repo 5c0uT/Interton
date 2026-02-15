@@ -1,0 +1,13 @@
+adding interf.math
+adding std.io
+
+call main() -> int {
+    interf_i cache = 0
+    cache = cache + 5
+    cache = cache + 10
+    cache = cache + 20
+    inscribe("Cache entries:", cache)
+    interf_i resonance = cache * 2
+    inscribe("Resonance pattern:", resonance)
+    return 0
+}

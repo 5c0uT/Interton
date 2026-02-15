@@ -1,0 +1,215 @@
+adding std.io
+adding std.math
+adding interf.math
+
+call main() -> int {
+    inscribe("=== Interference Pattern Analysis ===")
+    inscribe("")
+    
+    // Create interference caches for pattern analysis
+    interf_f time_series = 0.0
+    interf_i discrete_data = 0
+    interf_f oscillating_data = 0.0
+    
+    inscribe("1. Generating Sample Data Patterns:")
+    inscribe("")
+    
+    // Generate linear trend with noise
+    inscribe("Linear trend with noise:")
+    for int i = 0; i < 50; i = i + 1 {
+        float trend = 10.0 + 0.5 * float(i)
+        float noise = (std.math.random() - 0.5) * 2.0  // -1 to 1
+        float value = trend + noise
+        time_series = value
+    }
+    
+    // Generate discrete pattern
+    inscribe("Discrete pattern:")
+    for int i = 0; i < 20; i = i + 1 {
+        int value = i % 4  // Repeating pattern 0,1,2,3,0,1,2,3...
+        discrete_data = value
+    }
+    
+    // Generate oscillating data
+    inscribe("Oscillating data:")
+    for int i = 0; i < 100; i = i + 1 {
+        float x = float(i) * 0.1
+        float value = 5.0 * std.math.sin(x) + 2.0 * std.math.cos(2.0 * x)
+        oscillating_data = value
+    }
+    
+    inscribe("")
+    inscribe("2. Statistical Analysis:")
+    inscribe("")
+    
+    // Analyze time series
+    float mean_ts = interf.math.mean(time_series)
+    float std_dev_ts = interf.math.standard_deviation(time_series)
+    float variance_ts = interf.math.variance(time_series)
+    
+    inscribe("Time Series Statistics:")
+    inscribe("  Mean: " + mean_ts.to_string())
+    inscribe("  Standard Deviation: " + std_dev_ts.to_string())
+    inscribe("  Variance: " + variance_ts.to_string())
+    inscribe("  Data Points: " + |time_series|.to_string())
+    
+    // Analyze discrete data
+    float mean_disc = interf.math.mean(discrete_data)
+    inscribe("")
+    inscribe("Discrete Data Statistics:")
+    inscribe("  Mean: " + mean_disc.to_string())
+    inscribe("  Unique Values: " + interf.math.unique_count(discrete_data).to_string())
+    
+    inscribe("")
+    inscribe("3. Pattern Detection:")
+    inscribe("")
+    
+    // Detect trends
+    float trend_slope = interf.math.linear_trend(time_series)
+    inscribe("Linear Trend Analysis:")
+    inscribe("  Slope: " + trend_slope.to_string())
+    if trend_slope > 0.1 {
+        inscribe("  Pattern: Strong upward trend ↗")
+    } else if trend_slope > 0.01 {
+        inscribe("  Pattern: Mild upward trend ↗")
+    } else if trend_slope < -0.1 {
+        inscribe("  Pattern: Strong downward trend ↘")
+    } else if trend_slope < -0.01 {
+        inscribe("  Pattern: Mild downward trend ↘")
+    } else {
+        inscribe("  Pattern: Stable trend →")
+    }
+    
+    // Detect periodicity in oscillating data
+    float dominant_frequency = interf.math.dominant_frequency(oscillating_data)
+    inscribe("")
+    inscribe("Periodicity Analysis:")
+    inscribe("  Dominant Frequency: " + dominant_frequency.to_string())
+    inscribe("  Period: " + (1.0 / dominant_frequency).to_string() + " data points")
+    
+    // Pattern classification
+    inscribe("")
+    inscribe("4. Pattern Classification:")
+    
+    string time_series_pattern = interf.math.classify_pattern(time_series)
+    string oscillating_pattern = interf.math.classify_pattern(oscillating_data)
+    
+    inscribe("Time Series Pattern: " + time_series_pattern)
+    inscribe("Oscillating Data Pattern: " + oscillating_pattern)
+    
+    inscribe("")
+    inscribe("5. Anomaly Detection:")
+    inscribe("")
+    
+    // Add some anomalies to the data
+    time_series = 100.0  // Outlier
+    time_series = 5.0    // Another outlier
+    
+    int anomaly_count = 0
+    for int i = 0; i < |time_series|; i = i + 1 {
+        if interf.math.is_anomaly(time_series, i) {
+            anomaly_count = anomaly_count + 1
+            inscribe("Anomaly detected at position " + i.to_string() + ": " + time_series[i].to_string())
+        }
+    }
+    
+    inscribe("Total anomalies detected: " + anomaly_count.to_string())
+    
+    inscribe("")
+    inscribe("6. Correlation Analysis:")
+    inscribe("")
+    
+    // Create correlated datasets
+    interf_f dataset1 = 0.0
+    interf_f dataset2 = 0.0
+    
+    for int i = 0; i < 50; i = i + 1 {
+        float base = float(i) * 0.1
+        dataset1 = std.math.sin(base)
+        dataset2 = std.math.sin(base + 0.5)  // Phase shifted
+    }
+    
+    float correlation = interf.math.correlation(dataset1, dataset2)
+    inscribe("Correlation between datasets: " + correlation.to_string())
+    
+    if correlation > 0.7 {
+        inscribe("Interpretation: Strong positive correlation")
+    } else if correlation > 0.3 {
+        inscribe("Interpretation: Moderate positive correlation")
+    } else if correlation > -0.3 {
+        inscribe("Interpretation: Weak correlation")
+    } else if correlation > -0.7 {
+        inscribe("Interpretation: Moderate negative correlation")
+    } else {
+        inscribe("Interpretation: Strong negative correlation")
+    }
+    
+    inscribe("")
+    inscribe("7. Pattern Prediction:")
+    inscribe("")
+    
+    // Simple prediction based on recent trend
+    if |time_series| >= 5 {
+        float predicted_next = interf.math.predict_next(time_series)
+        inscribe("Predicted next value: " + predicted_next.to_string())
+        
+        float confidence = interf.math.prediction_confidence(time_series)
+        inscribe("Prediction confidence: " + confidence.to_string())
+    }
+    
+    inscribe("")
+    inscribe("8. Pattern Visualization (Text-based):")
+    inscribe("")
+    
+    // Create a simple text-based visualization
+    call visualize_pattern(data: interf_f, height: int, width: int) -> void {
+        inscribe("Pattern Visualization:")
+        
+        if |data| < width {
+            inscribe("  Not enough data for visualization")
+            return
+        }
+        
+        // Find min and max for scaling
+        float min_val = data[0]
+        float max_val = data[0]
+        for int i = 1; i < |data|; i = i + 1 {
+            if data[i] < min_val {
+                min_val = data[i]
+            }
+            if data[i] > max_val {
+                max_val = data[i]
+            }
+        }
+        
+        float range = max_val - min_val
+        if range == 0.0 {
+            range = 1.0  // Avoid division by zero
+        }
+        
+        // Create visualization
+        for int h = height - 1; h >= 0; h = h - 1 {
+            string line = "  "
+            float threshold = min_val + (float(h) / float(height - 1)) * range
+            
+            for int i = 0; i < width; i = i + 1 {
+                if data[i] >= threshold {
+                    line = line + "█"
+                } else {
+                    line = line + " "
+                }
+            }
+            inscribe(line)
+        }
+    }
+    
+    // Use only first 30 points for visualization
+    interf_f visualization_data = 0.0
+    for int i = 0; i < 30 and i < |oscillating_data|; i = i + 1 {
+        visualization_data = oscillating_data[i]
+    }
+    
+    visualize_pattern(visualization_data, 10, 30)
+    
+    return 0
+}

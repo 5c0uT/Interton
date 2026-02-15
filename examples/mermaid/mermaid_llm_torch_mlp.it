@@ -1,0 +1,27 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+using mermaid.deep(mlp_rules);
+
+adding <py> llm_mlp_score(x: float[]) -> float {
+    import torch
+    torch.manual_seed(13)
+    if len(x) == 0:
+        return 0.0
+    t = torch.tensor(x, dtype=torch.float32)
+    W1 = torch.randn(t.numel(), 4)
+    b1 = torch.randn(4)
+    W2 = torch.randn(4, 1)
+    h = torch.relu(t @ W1 + b1)
+    out = h @ W2
+    return float(out.item())
+}
+
+call main() -> int {
+    float[] vec = [0.5, 1.0, -0.25]
+    float score = llm_mlp_score(vec)
+    inscribe("mlp_score:", score)
+    return 0
+}
+

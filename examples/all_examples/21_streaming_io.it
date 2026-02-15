@@ -1,0 +1,15 @@
+adding std.io
+
+call main() -> int {
+    string path = "examples/all_examples/tmp_stream.txt"
+    write_file(path, "Alpha\nBeta\nGamma\nDelta\n")
+
+    string stream = open_file(path)
+    string chunk1 = stream.read_chunk(6)
+    string chunk2 = stream.read_chunk(6)
+    inscribe("chunk1:", chunk1)
+    inscribe("chunk2:", chunk2)
+    inscribe("eof:", stream.eof())
+    stream.close()
+    return 0
+}

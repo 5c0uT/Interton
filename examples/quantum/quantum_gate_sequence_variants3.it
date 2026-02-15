@@ -1,0 +1,12 @@
+adding std.io
+adding quantum.core
+
+call main() -> int {
+    quant_i q = |0>
+    q = H(q)
+    q = Z(q)
+    q = X(q)
+    int m = measure(q)
+    inscribe("result:", m)
+    return 0
+}

@@ -1,0 +1,19 @@
+adding std.io
+
+using mermaid.struct;
+using mermaid.cluster(1);
+
+adding <py> py_ids(text: string) -> int[] {
+    return [len(t) for t in text.split()]
+}
+
+adding <js> js_sum(values: int[]) -> int {
+    return values.reduce((a, b) => a + b, 0);
+}
+
+call main() -> int {
+    int[] ids = py_ids("mermaid bridge")
+    int total = js_sum(ids)
+    inscribe("total:", total)
+    return 0
+}

@@ -1,0 +1,20 @@
+adding std { io, system.files, system.memory, system.threads }
+
+using std.system.files;
+using std.system.memory;
+using std.system.threads;
+
+call main() -> int {
+    string path = "examples/all_examples/tmp_system_demo.txt"
+    write_file(path, "system demo\n")
+    string content = read_file(path)
+    inscribe("file:", content)
+
+    int mem = used_bytes()
+    int page = page_size()
+    int cores = hardware_concurrency()
+    inscribe("used_bytes:", mem)
+    inscribe("page_size:", page)
+    inscribe("cores:", cores)
+    return 0
+}
