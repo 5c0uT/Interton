@@ -1,9 +1,5 @@
 # Getting Started / Быстрый старт
 
-<p align="center">
-  <img src="../../Interton.svg" alt="Interton logo" width="420">
-</p>
-
 Target version / Целевая версия: `Interton beta-v_.6.2`
 
 This page is a bilingual navigation hub for first-time users.
