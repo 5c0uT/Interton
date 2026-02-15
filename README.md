@@ -124,7 +124,6 @@ Interton - это язык для инженерной разработки с �
 
 - Репозиторий: `https://github.com/5c0uT/Interton`
 - Релизы: `https://github.com/5c0uT/Interton/releases`
-- CI: `https://github.com/5c0uT/Interton/actions`
 
 ### Политика установки для пользователей
 
@@ -169,12 +168,6 @@ pwsh scripts/install_interton.ps1
 
 ```bash
 bash scripts/install_interton.sh --yes
-```
-
-Однострочный загрузчик без клонирования репозитория:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
 ```
 
 Что делает загрузчик:
