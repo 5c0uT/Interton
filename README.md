@@ -69,10 +69,6 @@ bash scripts/install_interton.sh --yes
 
 One-line remote loader (without cloning repo):
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
-```
-
 The loader automatically:
 
 1. resolves a release asset for your OS/arch,
