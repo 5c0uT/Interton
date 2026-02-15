@@ -83,12 +83,6 @@ Yes. Use:
 bash scripts/install_interton.sh --yes
 ```
 
-or:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
-```
-
 The loader resolves the matching release asset, downloads it, verifies SHA256 (when available), and runs smoke.
 
 ## 10. Where are compiler internals documented?
