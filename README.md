@@ -21,7 +21,6 @@ Official links:
 
 - Repository: `https://github.com/5c0uT/Interton`
 - Releases: `https://github.com/5c0uT/Interton/releases`
-- CI: `https://github.com/5c0uT/Interton/actions`
 
 ### Release-first installation policy
 
