@@ -110,12 +110,6 @@ Usage: interton_compiler [options] <file1> [file2 ...]
 bash scripts/install_interton.sh --yes
 ```
 
-Однострочный вариант без клонирования репозитория:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
-```
-
 Загрузчик автоматически:
 
 1. определяет нужный артефакт релиза под вашу ОС/архитектуру,

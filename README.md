@@ -1,7 +1,7 @@
 # Interton User Documentation / Пользовательская документация Interton
 
 <p align="center">
-  <img src="../Interton.svg" alt="Interton logo" width="560">
+  <img src=".github/assets/Interton.svg" alt="Interton logo" width="560">
 </p>
 
 [![Repository](https://img.shields.io/badge/GitHub-5c0uT%2FInterton-black?logo=github)](https://github.com/5c0uT/Interton)
@@ -21,7 +21,6 @@ Official links:
 
 - Repository: `https://github.com/5c0uT/Interton`
 - Releases: `https://github.com/5c0uT/Interton/releases`
-- CI: `https://github.com/5c0uT/Interton/actions`
 
 ### Release-first installation policy
 
@@ -69,10 +68,6 @@ bash scripts/install_interton.sh --yes
 ```
 
 One-line remote loader (without cloning repo):
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
-```
 
 The loader automatically:
 
@@ -129,7 +124,6 @@ Interton - это язык для инженерной разработки с �
 
 - Репозиторий: `https://github.com/5c0uT/Interton`
 - Релизы: `https://github.com/5c0uT/Interton/releases`
-- CI: `https://github.com/5c0uT/Interton/actions`
 
 ### Политика установки для пользователей
 
@@ -174,12 +168,6 @@ pwsh scripts/install_interton.ps1
 
 ```bash
 bash scripts/install_interton.sh --yes
-```
-
-Однострочный загрузчик без клонирования репозитория:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
 ```
 
 Что делает загрузчик:

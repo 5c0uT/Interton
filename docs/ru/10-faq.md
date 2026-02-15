@@ -100,12 +100,6 @@ pwsh scripts/install_interton.ps1
 bash scripts/install_interton.sh --yes
 ```
 
-или:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/5c0uT/Interton/main/scripts/install_interton.sh | bash -s -- --yes
-```
-
 Загрузчик сам скачивает нужный артефакт релиза, проверяет SHA256 (если доступен) и запускает smoke.
 
 ## 10. Почему вывод в примерах иногда отличается?
